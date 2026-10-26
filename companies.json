@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "eternal",
+    "ticker": "ETERNAL",
+    "name": "Eternal Limited",
+    "sector": "Online Services",
+    "headline": "Eternal is a business that returned to profit after years of losses, holds more cash than debt and does not pay a dividend. Its size jumped in FY22, which can come from an acquisition, a merger or a large capital raise.",
+    "generated": "2026-10-26"
+  },
+  {
+    "slug": "hdfcbank",
+    "ticker": "HDFCBANK",
+    "name": "HDFC Bank Limited",
+    "sector": "Private Banks",
+    "headline": "HDFC Bank is a consistently profitable business that has paid a dividend every year for the last ten years and has no controlling promoter. Its size jumped in FY24, which can come from an acquisition, a merger or a large capital raise.",
+    "generated": "2026-10-26"
+  },
+  {
+    "slug": "hyundai",
+    "ticker": "HYUNDAI",
+    "name": "Hyundai Motor India Ltd",
+    "sector": "Four Wheelers",
+    "headline": "Hyundai Motor India is a steadily growing, consistently profitable business that carries very little debt, has paid a dividend every year for the last six years and is about 82% owned by its promoters.",
+    "generated": "2026-10-26"
+  },
+  {
+    "slug": "suzlon",
+    "ticker": "SUZLON",
+    "name": "Suzlon Energy Limited",
+    "sector": "Renewable Energy Equipment & Services",
+    "headline": "Suzlon Energy is a business that returned to profit after years of losses, carries very little debt and does not pay a dividend. Its size jumped in FY25, which can come from an acquisition, a merger or a large capital raise.",
+    "generated": "2026-10-26"
+  },
+  {
+    "slug": "swiggy",
+    "ticker": "SWIGGY",
+    "name": "Swiggy Limited",
+    "sector": "Online Services",
+    "headline": "Swiggy is a loss-making business that holds more cash than debt, does not pay a dividend and has no controlling promoter. Its size jumped in FY22, which can come from an acquisition, a merger or a large capital raise.",
+    "generated": "2026-10-26"
+  },
+  {
+    "slug": "tcs",
+    "ticker": "TCS",
+    "name": "Tata Consultancy Services Ltd",
+    "sector": "IT Services & Consulting",
+    "headline": "Tata Consultancy Services is a steadily growing, consistently profitable business that holds more cash than debt, has paid a dividend every year for the last ten years and is about 72% owned by its promoters.",
+    "generated": "2026-10-26"
+  }
+]

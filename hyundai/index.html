@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyundai Motor India Ltd · Company report</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,.10); --wash: rgba(11,11,11,.05);
+  --accent: #2a78d6; --accent-ink: #ffffff;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948;
+  --good: #0ca30c; --warn: #fab219; --crit: #d03b3b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,.10); --wash: rgba(255,255,255,.06);
+    --accent: #3987e5;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,.10); --wash: rgba(255,255,255,.06);
+  --accent: #3987e5;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { margin: 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+/* top bar */
+.top { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--page) 88%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.top .wrap { display: flex; align-items: center; gap: 20px; height: 52px; }
+.brand { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 32vw; }
+.home { color: var(--ink2); white-space: nowrap; font-size: 13px; }
+.home:hover { color: var(--ink); text-decoration: none; }
+.top nav { display: flex; gap: 4px; overflow-x: auto; flex: 1; scrollbar-width: none; }
+.top nav a { color: var(--ink2); padding: 6px 10px; border-radius: 8px; white-space: nowrap; }
+.top nav a:hover { background: var(--wash); text-decoration: none; color: var(--ink); }
+.iconbtn { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; width: 34px; height: 34px;
+  cursor: pointer; display: grid; place-items: center; }
+.iconbtn:hover { background: var(--wash); }
+
+section { padding: 36px 0 8px; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+h2 { font-size: 20px; font-weight: 600; letter-spacing: -.01em; }
+.note { color: var(--ink2); font-size: 12.5px; }
+
+/* overview */
+.hero { padding-top: 28px; }
+.hero h1 { font-size: 32px; line-height: 1.15; font-weight: 650; letter-spacing: -.02em; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 14px; }
+.chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 2px 10px;
+  font-size: 12.5px; color: var(--ink2); }
+.chip b { color: var(--ink); font-weight: 600; }
+.about { color: var(--ink2); max-width: 78ch; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 20px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; min-width: 0; }
+.tile .l { color: var(--ink2); font-size: 12.5px; }
+.tile .v { font-size: 26px; font-weight: 600; letter-spacing: -.01em; margin: 2px 0 4px; white-space: nowrap; }
+.tile .v small { font-size: 13px; font-weight: 500; color: var(--ink2); margin-left: 4px; }
+.tile .d { font-size: 12.5px; color: var(--ink2); display: flex; flex-direction: column; gap: 2px; }
+.tile .dg { white-space: nowrap; }
+.ico { font-size: 10px; line-height: 1; }
+.ico.up { color: var(--good); } .ico.down { color: var(--crit); } .ico.warn { color: var(--warn); } .ico.flat { color: var(--muted); }
+
+/* takeaways */
+.tk-summary { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--ink2); font-size: 12.5px; }
+.tk-summary b { color: var(--ink); font-weight: 600; }
+.insights { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); align-items: start; }
+.insight { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--muted); border-radius: 14px; padding: 12px 16px; min-width: 0; }
+.insight.positive { border-left-color: var(--good); } .insight.caution { border-left-color: var(--warn); }
+.insight .meta { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink2); margin-bottom: 4px; }
+.insight .tone { font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 5px; }
+.insight .tone i { font-style: normal; font-size: 12px; }
+.insight.positive .tone i { color: var(--good); } .insight.caution .tone i { color: var(--warn); } .insight.neutral .tone i { color: var(--muted); }
+.insight h3 { font-size: 14.5px; font-weight: 600; line-height: 1.35; }
+.insight p { color: var(--ink2); font-size: 13px; margin-top: 4px; }
+.insight details { margin-top: 8px; font-size: 12.5px; color: var(--ink2); }
+.insight summary { cursor: pointer; color: var(--accent); width: fit-content; }
+.insight ul { margin: 6px 0 0; padding-left: 18px; }
+.insight .rule { margin-top: 6px; font-style: italic; }
+[hidden] { display: none !important; }
+.tk-more { margin-top: 12px; }
+.tk-note { margin-top: 12px; }
+
+/* story */
+.story { max-width: 900px; }
+.story .lead { font-size: 21px; line-height: 1.5; font-weight: 550; letter-spacing: -.01em; margin: 0 0 8px; }
+.chapter { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px 28px; padding: 16px 0; border-top: 1px solid var(--border); }
+.chapter h3 { font-size: 13px; font-weight: 600; color: var(--ink2); padding-top: 3px; }
+.chapter p { font-size: 15.5px; line-height: 1.7; max-width: 68ch; }
+.numbers { margin-top: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 4px 16px 16px; }
+.numbers > summary { cursor: pointer; padding: 12px 0; font-weight: 600; display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
+.numbers .tk-summary { font-weight: 400; }
+.numbers .insight { background: var(--page); }
+.numbers:not([open]) { padding-bottom: 0; }
+@media (max-width: 640px) { .chapter { grid-template-columns: 1fr; gap: 2px; } }
+
+/* cards + charts */
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px 10px; margin: 0; min-width: 0; }
+.card figcaption { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.card h3 { font-size: 14px; font-weight: 600; }
+.card .sub { color: var(--ink2); font-size: 12px; }
+.mini { border: 1px solid var(--border); background: transparent; border-radius: 7px; padding: 1px 9px; font-size: 12px;
+  color: var(--ink2); cursor: pointer; }
+.mini:hover { background: var(--wash); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 8px 0 0; font-size: 12px; color: var(--ink2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+.legend i.ln { height: 2px; width: 14px; border-radius: 1px; }
+.chart-body { margin-top: 6px; }
+.chart-body svg { display: block; width: 100%; overflow: visible; }
+.empty { color: var(--muted); padding: 28px 0; text-align: center; }
+
+svg text { font: 11px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--muted); }
+svg text.v { fill: var(--ink); font-weight: 600; }
+svg text.seg { font-weight: 600; }
+svg .gridline { stroke: var(--grid); stroke-width: 1; }
+svg .axisline { stroke: var(--axis); stroke-width: 1; }
+svg .hit { fill: transparent; cursor: default; }
+svg .hit:hover, svg .hit:focus { fill: var(--wash); outline: none; }
+svg .cross { stroke: var(--axis); stroke-width: 1; }
+
+.tip { position: fixed; z-index: 50; pointer-events: none; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; font-size: 12.5px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.16); min-width: 130px; max-width: 280px; }
+.tip[hidden] { display: none; }
+.tip-title { color: var(--ink2); font-size: 12px; margin-bottom: 4px; }
+.tip-row { display: flex; align-items: center; gap: 8px; line-height: 1.6; }
+.tip-row .key { width: 10px; height: 3px; border-radius: 2px; flex: none; }
+.tip-row b { font-weight: 600; }
+.tip-row span { color: var(--ink2); }
+
+/* controls */
+.controls { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; margin-bottom: 14px; }
+.seg { display: inline-flex; border: 1px solid var(--border); background: var(--surface); border-radius: 10px; padding: 2px; }
+.seg button { border: 0; background: transparent; padding: 5px 12px; border-radius: 8px; cursor: pointer; color: var(--ink2); }
+.seg button:hover { background: var(--wash); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.seg button:disabled { opacity: .4; cursor: not-allowed; background: transparent; }
+
+/* tables */
+.tbl-wrap.scroll { max-height: 440px; overflow: auto; }
+.tbl-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 13px; }
+th, td { padding: 7px 12px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--grid); }
+td.wrap-text { white-space: normal; min-width: 240px; max-width: 520px; }
+th { font-weight: 600; color: var(--ink2); background: var(--surface); position: sticky; top: 0; font-size: 12px; }
+th.n, td.n { text-align: right; font-variant-numeric: tabular-nums; }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--wash); }
+td:first-child, th:first-child { position: sticky; left: 0; background: var(--surface); z-index: 1; }
+th:first-child { z-index: 3; }
+th { z-index: 2; }
+tbody tr:hover td:first-child { background: var(--surface); box-shadow: inset 0 0 0 99px var(--wash); }
+tr.b td { font-weight: 600; }
+tr.i td:first-child { padding-left: 28px; color: var(--ink2); }
+tr.grp td { background: var(--page); color: var(--ink2); font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+tr.grp:hover td { background: var(--page); box-shadow: none; }
+.ttm { background: var(--wash); }
+.neg { color: var(--ink); }
+.pill { display: inline-block; border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; font-size: 11.5px; color: var(--ink2); }
+
+.cols2 { display: grid; gap: 12px; align-items: start; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); margin-top: 12px; }
+.sub-h { font-size: 14px; font-weight: 600; margin: 22px 0 8px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.sub-h .note { font-weight: 400; }
+
+.chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.linkchip { border: 1px solid var(--border); background: var(--surface); border-radius: 10px; padding: 5px 12px; color: var(--ink); }
+.linkchip:hover { background: var(--wash); text-decoration: none; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+input[type="search"], select { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 5px 10px; min-width: 0; }
+input[type="search"] { width: min(280px, 100%); }
+.more { margin-top: 10px; }
+
+footer { margin-top: 48px; padding: 20px 0 48px; border-top: 1px solid var(--border); color: var(--ink2); font-size: 12.5px; }
+footer p + p { margin-top: 6px; }
+.err { color: var(--crit); }
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 26px; }
+  .grid, .cols2 { grid-template-columns: 1fr; }
+  .brand { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print { .top, .controls, .mini, .filters, .more { display: none !important; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="home" href="/">&larr; All companies</a><span class="brand" id="brand"></span>
+    <nav aria-label="Sections">
+      <a href="#overview">Overview</a><a href="#takeaways">Story</a><a href="#financials">Financials</a><a href="#ownership">Ownership</a>
+      <a href="#dividends">Dividends &amp; actions</a><a href="#filings">Filings</a>
+    </nav>
+    <button class="iconbtn" id="theme" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">◐</button>
+  </div>
+</header>
+<main class="wrap">
+  <section id="overview" class="hero"></section>
+  <section id="takeaways"></section>
+  <section id="financials"></section>
+  <section id="ownership"></section>
+  <section id="dividends"></section>
+  <section id="filings"></section>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+<div class="tip" id="tip" hidden role="status"></div>
+<script id="report-data" type="application/json">{"info":{"sid":"HYU","isin":"INE0V6F01027","gic":{"industry":"Automobiles","industrygroup":"Automobiles & Components","sector":"Consumer Discretionary","subindustry":"Automobile Manufacturers"},"marketCapLabel":"Largecap","nShareholders":724734,"name":"Hyundai Motor India Ltd","ticker":"HYUNDAI","sector":"Four Wheelers","exchange":"NSE","description":"Hyundai Motor India Ltd. (HMIL) is a wholly-owned subsidiary of Hyundai Motor Company, focused on manufacturing and selling a range of car models across India.","tags":["Four Wheelers"]},"income":{"annual":{"normal":[{"displayPeriod":"FY 2021","endDate":"2021-03-31T00:00:00.000Z","reporting":"consolidated","incTrev":41404.65,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":31224.98,"incPfc":222.03,"incEpc":1447.28,"incSga":2966.88,"incOpe":865.4199999999996,"incEbi":4678.060000000001,"incDep":1973.16,"incPbi":2704.9000000000015,"incIoi":164.65,"incPbt":2540.2500000000014,"incToi":659.0899999999999,"incNinc":1881.1600000000014,"incEps":23.15156734840861,"incDps":16.73,"incPyr":0.7226292608284245},{"displayPeriod":"FY 2022","endDate":"2022-03-31T00:00:00.000Z","reporting":"consolidated","incTrev":47966.05,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":35887.21,"incPfc":265.08,"incEpc":1626.68,"incSga":3298.99,"incOpe":814.38,"incEbi":6073.710000000004,"incDep":2169.59,"incPbi":3904.1200000000035,"incIoi":131.91,"incPbt":3772.2100000000037,"incToi":870.62,"incNinc":2901.590000000004,"incEps":35.7100705428932,"incDps":18.38,"incPyr":0.5147007474522582},{"displayPeriod":"FY 2023","endDate":"2023-03-31T00:00:00.000Z","reporting":"consolidated","incTrev":61436.64,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":45165.05,"incPfc":301.07,"incEpc":1766.23,"incSga":4577.98,"incOpe":948.4700000000038,"incEbi":8677.839999999995,"incDep":2189.87,"incPbi":6487.969999999995,"incIoi":142.4,"incPbt":6345.569999999995,"incToi":1636.3200000000002,"incNinc":4709.2499999999945,"incEps":57.95706826399298,"incDps":57.27,"incPyr":0.9881452205128217},{"displayPeriod":"FY 2024","endDate":"2024-03-31T00:00:00.000Z","reporting":"consolidated","incTrev":71356.37,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":51731.42,"incPfc":340.98,"incEpc":1975.49,"incSga":5668.96,"incOpe":1033.6400000000015,"incEbi":10605.879999999996,"incDep":2207.93,"incPbi":8397.949999999995,"incIoi":158.08,"incPbt":8239.869999999995,"incToi":2179.8300000000004,"incNinc":6060.039999999995,"incEps":147.68581192903082,"incDps":1327,"incPyr":8.98529102198171},{"displayPeriod":"FY 2025","endDate":"2025-03-31T00:00:00.000Z","reporting":"consolidated","incTrev":70104.39,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":50147.63,"incPfc":343.68,"incEpc":2311.21,"incSga":6146.82,"incOpe":1331.2400000000023,"incEbi":9823.810000000001,"incDep":2105.26,"incPbi":7718.550000000001,"incIoi":127.2,"incPbt":7591.350000000001,"incToi":1951.1299999999999,"incNinc":5640.220000000001,"incEps":137.45461583724844,"incDps":21,"incPyr":0.15277769954895373},{"displayPeriod":"FY 2026","endDate":"2026-03-31T00:00:00.000Z","reporting":"consolidated","incTrev":71752.13,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":50577.16,"incPfc":392.89,"incEpc":2747.44,"incSga":6653.96,"incOpe":1833.1599999999985,"incEbi":9547.520000000006,"incDep":2198,"incPbi":7349.520000000006,"incIoi":106.47,"incPbt":7243.050000000006,"incToi":1811.54,"incNinc":5431.510000000006,"incEps":66.8459724683466,"incDps":21,"incPyr":0.31415505264650123},{"incTrev":71693.7,"incOpe":62760.14,"incEbi":8933.559999999998,"incDep":2226.99,"incPbi":6706.569999999998,"incIoi":109.07000000000001,"incPbt":6597.499999999998,"incToi":1646.6,"incNinc":4950.899999999998,"incEps":60.931071671328354,"incDps":21,"incPyr":0.3446517421074958,"displayPeriod":"TTM","reporting":"","endDate":"","incRaw":null,"incPfc":null,"incEpc":null,"incSga":null}],"growth":[{"incTrev":41404.65,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":31224.98,"incPfc":222.03,"incEpc":1447.28,"incSga":2966.88,"incOpe":865.4199999999996,"incEbi":4678.060000000001,"incDep":1973.16,"incPbi":2704.9000000000015,"incIoi":164.65,"incPbt":2540.2500000000014,"incToi":659.0899999999999,"incNinc":1881.1600000000014,"incEps":23.15156734840861,"incDps":16.73,"incPyr":0.7226292608284245,"displayPeriod":"FY 2021","reporting":"consolidated"},{"incTrev":15.847012352477321,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":14.931090428240465,"incPfc":19.389271720037826,"incEpc":12.395666353435415,"incSga":11.193914145499638,"incOpe":-5.8977144045665275,"incEbi":29.833948260603798,"incDep":9.95509740720469,"incPbi":44.33509556730383,"incIoi":-19.88460370482843,"incPbt":48.4975888199981,"incToi":32.09425116448438,"incNinc":54.24472134215067,"incEps":54.24472134215067,"incDps":9.862522414823662,"incPyr":-28.77388512302925,"displayPeriod":"FY '21 - FY '22"},{"incTrev":28.083592457581965,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":25.85277596112934,"incPfc":13.577033348423122,"incEpc":8.578823124400618,"incSga":38.76913843327806,"incOpe":16.465286475601534,"incEbi":42.87544186337493,"incDep":0.934738821620663,"incPbi":66.1826480743417,"incIoi":7.952391782275801,"incPbt":68.21889555459502,"incToi":87.94881808366453,"incNinc":62.29894643971024,"incEps":62.29894643971026,"incDps":211.588683351469,"incPyr":91.98441529453548,"displayPeriod":"FY '22 - FY '23"},{"incTrev":16.146276879725185,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":14.538608946519476,"incPfc":13.256053409506105,"incEpc":11.847834087293274,"incSga":23.831034648469423,"incOpe":8.979725241704783,"incEbi":22.217971292395365,"incDep":0.8247064894263105,"incPbi":29.438792102922825,"incIoi":11.011235955056184,"incPbt":29.852322171215537,"incToi":33.21538574361984,"incNinc":28.683760683760735,"incEps":154.8193280866549,"incDps":2217.0944648157847,"incPyr":809.3087569981443,"displayPeriod":"FY '23 - FY '24"},{"incTrev":-1.7545455297123382,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":-3.0615629727542775,"incPfc":0.791835298257959,"incEpc":16.99426471407094,"incSga":8.429412096751427,"incOpe":28.791455439031033,"incEbi":-7.3739284246096926,"incDep":-4.65005684057011,"incPbi":-8.09006960031906,"incIoi":-19.53441295546559,"incPbt":-7.870512520221732,"incToi":-10.491643843786004,"incNinc":-6.927677045035916,"incEps":-6.927677045035914,"incDps":-98.41748304446119,"incPyr":-98.29969113771388,"displayPeriod":"FY '24 - FY '25"},{"incTrev":2.350409154120028,"incCrev":null,"incGpro":null,"incOpc":null,"incRaw":0.8565310065500725,"incPfc":14.318552141526997,"incEpc":18.874528926406516,"incSga":8.250444945516549,"incOpe":37.70319401460258,"incEbi":-2.812452602401669,"incDep":4.4051566077349005,"incPbi":-4.7810793478049005,"incIoi":-16.297169811320757,"incPbt":-4.588116738129523,"incToi":-7.154315704232928,"incNinc":-3.700387573534285,"incEps":-51.36869572463481,"incDps":0,"incPyr":105.62886702312089,"displayPeriod":"FY '25 - FY '26"},{"incTrev":-0.08143312261253786,"incOpe":0.8930688577582897,"incEbi":-6.430570451803273,"incDep":1.318926296633293,"incPbi":-8.748190358009877,"incIoi":2.44200244200245,"incPbt":-8.912681812220086,"incToi":-9.104960420415782,"incNinc":-8.848552244219514,"incEps":-8.848552244219524,"incDps":0,"incPyr":9.707527924215988,"displayPeriod":"TTM","reporting":"","endDate":"","incRaw":null,"incPfc":null,"incEpc":null,"incSga":null}],"margin":[{"displayPeriod":"FY 2021","reporting":"consolidated","incTrev":100,"incCrev":0,"incGpro":0,"incOpc":0,"incRaw":75.41418657083202,"incPfc":0.5362441175085407,"incEpc":3.495452805421613,"incSga":7.1655719828569975,"incOpe":2.090151710013246,"incEbi":11.298392813367583,"incDep":4.765551695280602,"incPbi":6.5328411180869805,"incIoi":0.3976606492265965,"incPbt":6.135180468860385,"incToi":1.5918260388627843,"incNinc":4.5433544299976,"incEps":23.15156734840861,"incDps":16.73,"incPyr":0.7226292608284245},{"displayPeriod":"FY 2022","reporting":"consolidated","incTrev":100,"incCrev":0,"incGpro":0,"incOpc":0,"incRaw":74.81793893806139,"incPfc":0.5526408782878723,"incEpc":3.3913153157285203,"incSga":6.877760415960872,"incOpe":1.6978258580808716,"incEbi":12.66251859388047,"incDep":4.523178373036762,"incPbi":8.139340220843708,"incIoi":0.2750070101665657,"incPbt":7.864333210677142,"incToi":1.815075454409942,"incNinc":6.0492577562672,"incEps":35.7100705428932,"incDps":18.38,"incPyr":0.5147007474522582},{"displayPeriod":"FY 2023","reporting":"consolidated","incTrev":100,"incCrev":0,"incGpro":0,"incOpc":0,"incRaw":73.5148439107347,"incPfc":0.49004958604507015,"incEpc":2.8748805273205047,"incSga":7.451546829383898,"incOpe":1.5438181515135003,"incEbi":14.124860995002322,"incDep":3.5644364665775994,"incPbi":10.560424528424724,"incIoi":0.23178350899398145,"incPbt":10.328641019430743,"incToi":2.663426906158931,"incNinc":7.665214113271811,"incEps":57.95706826399298,"incDps":57.27,"incPyr":0.9881452205128217},{"displayPeriod":"FY 2024","reporting":"consolidated","incTrev":100,"incCrev":0,"incGpro":0,"incOpc":0,"incRaw":72.4972696901482,"incPfc":0.4778550254167918,"incEpc":2.768484439441076,"incSga":7.944574534831299,"incOpe":1.4485602336553858,"incEbi":14.86325607650725,"incDep":3.094229709274729,"incPbi":11.76902636723252,"incIoi":0.2215359329517463,"incPbt":11.547490434280775,"incToi":3.0548499033793344,"incNinc":8.49264053090144,"incEps":147.68581192903082,"incDps":1327,"incPyr":8.98529102198171},{"displayPeriod":"FY 2025","reporting":"consolidated","incTrev":100,"incCrev":0,"incGpro":0,"incOpc":0,"incRaw":71.53279559240156,"incPfc":0.490240340155588,"incEpc":3.2968120826670058,"incSga":8.76809569272338,"incOpe":1.8989395671226899,"incEbi":14.013116724929782,"incDep":3.003035901175376,"incPbi":11.010080823754405,"incIoi":0.1814437013145682,"incPbt":10.828637122439838,"incToi":2.7831780577507343,"incNinc":8.045459064689103,"incEps":137.45461583724844,"incDps":21,"incPyr":0.15277769954895373},{"displayPeriod":"FY 2026","reporting":"consolidated","incTrev":100,"incCrev":0,"incGpro":0,"incOpc":0,"incRaw":70.48872277380475,"incPfc":0.5475656262747879,"incEpc":3.8290709976135897,"incSga":9.273536548671098,"incOpe":2.5548509849115257,"incEbi":13.306253068724239,"incDep":3.0633236950596445,"incPbi":10.242929373664595,"incIoi":0.14838583885941783,"incPbt":10.094543534805176,"incToi":2.5247194752267283,"incNinc":7.569824059578448,"incEps":66.8459724683466,"incDps":21,"incPyr":0.31415505264650123},{"incTrev":100,"incOpe":87.53926774598047,"incEbi":12.460732254019527,"incDep":3.10625619824336,"incPbi":9.354476055776168,"incIoi":0.15213331157409926,"incPbt":9.202342744202069,"incToi":2.2967150530660296,"incNinc":6.905627691136038,"incEps":60.931071671328354,"incDps":21,"incPyr":0.3446517421074958,"displayPeriod":"TTM","reporting":"","endDate":"","incRaw":null,"incPfc":null,"incEpc":null,"incSga":null}]},"interim":{"normal":[{"displayPeriod":"JUN 2023","endDate":"2023-06-30T00:00:00.000Z","reporting":"consolidated","qIncTrev":17011.61,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":14626.26,"qIncEbi":2385.3500000000004,"qIncDep":559.69,"qIncPbi":1825.6600000000003,"qIncIoi":37.19,"qIncPbt":1788.4700000000003,"qIncToi":459.28999999999996,"qIncNinc":1329.1800000000003,"qIncEps":1635.83,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"SEP 2023","endDate":"2023-09-30T00:00:00.000Z","reporting":"consolidated","qIncTrev":19042.91,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":16219.65,"qIncEbi":2823.26,"qIncDep":556.6,"qIncPbi":2266.6600000000003,"qIncIoi":34.63,"qIncPbt":2232.03,"qIncToi":603.57,"qIncNinc":1628.46,"qIncEps":2004.16,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"DEC 2023","endDate":"2023-12-31T00:00:00.000Z","reporting":"consolidated","qIncTrev":17243.57,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":14701.24,"qIncEbi":2542.33,"qIncDep":533.8,"qIncPbi":2008.53,"qIncIoi":48.79,"qIncPbt":1959.74,"qIncToi":534.5200000000001,"qIncNinc":1425.2199999999998,"qIncEps":1754.03,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"MAR 2024","endDate":"2024-03-31T00:00:00.000Z","reporting":"consolidated","qIncTrev":18004.24,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":15149.3,"qIncEbi":2854.9400000000023,"qIncDep":557.84,"qIncPbi":2297.100000000002,"qIncIoi":37.48,"qIncPbt":2259.620000000002,"qIncToi":582.44,"qIncNinc":1677.180000000002,"qIncEps":2064.12,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"JUN 2024","endDate":"2024-06-30T00:00:00.000Z","reporting":"consolidated","qIncTrev":17567.98,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":15003.98,"qIncEbi":2564,"qIncDep":528.98,"qIncPbi":2035.02,"qIncIoi":31.64,"qIncPbt":2003.3799999999999,"qIncToi":513.73,"qIncNinc":1489.6499999999999,"qIncEps":18.33,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"SEP 2024","endDate":"2024-09-30T00:00:00.000Z","reporting":"consolidated","qIncTrev":17452.64,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":15055.07,"qIncEbi":2397.5699999999997,"qIncDep":518.55,"qIncPbi":1879.0199999999998,"qIncIoi":29.17,"qIncPbt":1849.8499999999997,"qIncToi":474.38,"qIncNinc":1375.4699999999998,"qIncEps":16.93,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"DEC 2024","endDate":"2024-12-31T00:00:00.000Z","reporting":"consolidated","qIncTrev":16892.46,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":14772.46,"qIncEbi":2120,"qIncDep":527.38,"qIncPbi":1592.62,"qIncIoi":29.89,"qIncPbt":1562.7299999999998,"qIncToi":401.99,"qIncNinc":1160.7399999999998,"qIncEps":14.29,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"MAR 2025","endDate":"2025-03-31T00:00:00.000Z","reporting":"consolidated","qIncTrev":18149.86,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":15407.61,"qIncEbi":2742.25,"qIncDep":530.35,"qIncPbi":2211.9,"qIncIoi":36.5,"qIncPbt":2175.4,"qIncToi":561.05,"qIncNinc":1614.3500000000001,"qIncEps":19.87,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"JUN 2025","endDate":"2025-06-30T00:00:00.000Z","reporting":"consolidated","qIncTrev":16627.67,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":14227.64,"qIncEbi":2400.029999999999,"qIncDep":528.11,"qIncPbi":1871.9199999999987,"qIncIoi":24.73,"qIncPbt":1847.1899999999987,"qIncToi":477.97,"qIncNinc":1369.2199999999987,"qIncEps":16.85,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"SEP 2025","endDate":"2025-09-30T00:00:00.000Z","reporting":"consolidated","qIncTrev":17692.03,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":15031.89,"qIncEbi":2660.1399999999994,"qIncDep":517.52,"qIncPbi":2142.6199999999994,"qIncIoi":16.66,"qIncPbt":2125.9599999999996,"qIncToi":553.7099999999999,"qIncNinc":1572.2499999999995,"qIncEps":19.35,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"DEC 2025","endDate":"2025-12-31T00:00:00.000Z","reporting":"consolidated","qIncTrev":18217.14,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":15955.14,"qIncEbi":2262,"qIncDep":568.76,"qIncPbi":1693.24,"qIncIoi":27.21,"qIncPbt":1666.03,"qIncToi":431.63,"qIncNinc":1234.4,"qIncEps":15.19,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"MAR 2026","endDate":"2026-03-31T00:00:00.000Z","reporting":"consolidated","qIncTrev":19175.53,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":16950.18,"qIncEbi":2225.3499999999985,"qIncDep":583.61,"qIncPbi":1641.7399999999984,"qIncIoi":37.87,"qIncPbt":1603.8699999999985,"qIncToi":348.24,"qIncNinc":1255.6299999999985,"qIncEps":15.45,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"JUN 2026","endDate":"2026-06-30T00:00:00.000Z","reporting":"consolidated","qIncTrev":16609,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":14822.93,"qIncEbi":1786.0699999999997,"qIncDep":557.1,"qIncPbi":1228.9699999999998,"qIncIoi":27.33,"qIncPbt":1201.6399999999999,"qIncToi":313.02,"qIncNinc":888.6199999999999,"qIncEps":10.94,"qIncDps":null,"qIncPyr":null}],"growth":[{"qIncTrev":17011.61,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":14626.26,"qIncEbi":2385.3500000000004,"qIncDep":559.69,"qIncPbi":1825.6600000000003,"qIncIoi":37.19,"qIncPbt":1788.4700000000003,"qIncToi":459.28999999999996,"qIncNinc":1329.1800000000003,"qIncEps":1635.83,"qIncDps":null,"qIncPyr":null,"displayPeriod":"JUN 2023","reporting":"consolidated"},{"qIncTrev":11.940668755044346,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":10.894035795890401,"qIncEbi":18.358312197371447,"qIncDep":-0.5520913362754438,"qIncPbi":24.155647820514222,"qIncIoi":-6.883570852379659,"qIncPbt":24.80108696259931,"qIncToi":31.41370376015156,"qIncNinc":22.51613776915088,"qIncEps":22.51639840325707,"qIncDps":null,"qIncPyr":null,"displayPeriod":"JUN '23 - SEP '23"},{"qIncTrev":-9.448870997132266,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":-9.361546025962337,"qIncEbi":-9.950553615324138,"qIncDep":-4.096298957959049,"qIncPbi":-11.388121729769807,"qIncIoi":40.88940225238231,"qIncPbt":-12.199208791996531,"qIncToi":-11.440263763937894,"qIncNinc":-12.480503051963218,"qIncEps":-12.480540475810319,"qIncDps":null,"qIncPyr":null,"displayPeriod":"SEP '23 - DEC '23"},{"qIncTrev":4.411325496982364,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":3.0477701200715006,"qIncEbi":12.296200729252394,"qIncDep":4.503559385537669,"qIncPbi":14.367223790533485,"qIncIoi":-23.18097970895676,"qIncPbt":15.302029861104133,"qIncToi":8.9650527576143,"qIncNinc":17.67867416960205,"qIncEps":17.678717011681666,"qIncDps":null,"qIncPyr":null,"displayPeriod":"DEC '23 - MAR '24"},{"qIncTrev":-2.4230958929674453,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":-0.9592522426778777,"qIncEbi":-10.1907570737039,"qIncDep":-5.173526459199772,"qIncPbi":-11.409168081494142,"qIncIoi":-15.581643543223045,"qIncPbt":-11.339959816252382,"qIncToi":-11.796923288235703,"qIncNinc":-11.181268557936656,"qIncEps":-99.1119702342887,"qIncDps":null,"qIncPyr":null,"displayPeriod":"MAR '24 - JUN '24"},{"qIncTrev":-0.6565353558007246,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":0.34050965143915246,"qIncEbi":-6.4910296411856585,"qIncDep":-1.9717191576241186,"qIncPbi":-7.665772326561912,"qIncIoi":-7.806573957016431,"qIncPbt":-7.663548602861175,"qIncToi":-7.659665583088397,"qIncNinc":-7.664887725304608,"qIncEps":-7.637752318603376,"qIncDps":null,"qIncPyr":null,"displayPeriod":"JUN '24 - SEP '24"},{"qIncTrev":-3.209714977218348,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":-1.877174931767176,"qIncEbi":-11.577138519417566,"qIncDep":1.7028251856137386,"qIncPbi":-15.241987844727564,"qIncIoi":2.468289338361326,"qIncPbt":-15.521258480417329,"qIncToi":-15.259918209030731,"qIncNinc":-15.611391015434727,"qIncEps":-15.593620791494391,"qIncDps":null,"qIncPyr":null,"displayPeriod":"SEP '24 - DEC '24"},{"qIncTrev":7.443557658268846,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":4.299554711943721,"qIncEbi":29.35141509433962,"qIncDep":0.5631612878759201,"qIncPbi":38.88435408320882,"qIncIoi":22.114419538307125,"qIncPbt":39.20510900795405,"qIncToi":39.5681484614045,"qIncNinc":39.079380395265126,"qIncEps":39.048285514345714,"qIncDps":null,"qIncPyr":null,"displayPeriod":"DEC '24 - MAR '25"},{"qIncTrev":-8.386786454551178,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":-7.658358434565783,"qIncEbi":-12.479533230011894,"qIncDep":-0.4223625907419645,"qIncPbi":-15.37049595370502,"qIncIoi":-32.24657534246575,"qIncPbt":-15.087340259262728,"qIncToi":-14.807949380625601,"qIncNinc":-15.184439557716816,"qIncEps":-15.198792148968291,"qIncDps":null,"qIncPyr":null,"displayPeriod":"MAR '25 - JUN '25"},{"qIncTrev":6.401137381244641,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":5.6527294758652875,"qIncEbi":10.837781194401765,"qIncDep":-2.0052640548370664,"qIncPbi":14.461088080687258,"qIncIoi":-32.63243024666397,"qIncPbt":15.091571522149918,"qIncToi":15.84618281482099,"qIncNinc":14.828150333766748,"qIncEps":14.836795252225517,"qIncDps":null,"qIncPyr":null,"displayPeriod":"JUN '25 - SEP '25"},{"qIncTrev":2.9680596291098342,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":6.141942230817283,"qIncEbi":-14.966881442330084,"qIncDep":9.901066625444429,"qIncPbi":-20.9733877215745,"qIncIoi":63.32533013205282,"qIncPbt":-21.633991232196266,"qIncToi":-22.047642267613,"qIncNinc":-21.488312927333407,"qIncEps":-21.498708010335925,"qIncDps":null,"qIncPyr":null,"displayPeriod":"SEP '25 - DEC '25"},{"qIncTrev":5.260924601776127,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":6.236485546350586,"qIncEbi":-1.620247568523495,"qIncDep":2.610943104297071,"qIncPbi":-3.041506224752639,"qIncIoi":39.17677324513045,"qIncPbt":-3.7310252516462157,"qIncToi":-19.319787781201487,"qIncNinc":1.719863901490475,"qIncEps":1.7116524028966411,"qIncDps":null,"qIncPyr":null,"displayPeriod":"DEC '25 - MAR '26"},{"qIncTrev":-13.384401891368839,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":null,"qIncPfc":null,"qIncEpc":null,"qIncSga":null,"qIncOpe":-12.550014218138097,"qIncEbi":-19.739816208686236,"qIncDep":-4.542417025068109,"qIncPbi":-25.142227149244036,"qIncIoi":-27.83205703723264,"qIncPbt":-25.078715856023184,"qIncToi":-10.113714679531364,"qIncNinc":-29.229151899843032,"qIncEps":-29.190938511326863,"qIncDps":null,"qIncPyr":null,"displayPeriod":"MAR '26 - JUN '26"}],"margin":[{"displayPeriod":"JUN 2023","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":85.97810554086297,"qIncEbi":14.021894459137027,"qIncDep":3.290047208935545,"qIncPbi":10.731847250201481,"qIncIoi":0.21861540442086316,"qIncPbt":10.513231845780618,"qIncToi":2.699862035398178,"qIncNinc":7.81336981038244,"qIncEps":1635.83,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"SEP 2023","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":85.17421969646446,"qIncEbi":14.825780303535542,"qIncDep":2.9228726071803104,"qIncPbi":11.902907696355234,"qIncIoi":0.18185245847404627,"qIncPbt":11.721055237881187,"qIncToi":3.169526086086633,"qIncNinc":8.551529151794552,"qIncEps":2004.16,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"DEC 2023","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":85.25635932698391,"qIncEbi":14.743640673016086,"qIncDep":3.0956466671344733,"qIncPbi":11.647994005881612,"qIncIoi":0.28294604887502994,"qIncPbt":11.365047957006583,"qIncToi":3.0998221365993244,"qIncNinc":8.265225820407258,"qIncEps":1754.03,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"MAR 2024","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":84.14295743669268,"qIncEbi":15.85704256330732,"qIncDep":3.0983812701896882,"qIncPbi":12.758661293117633,"qIncIoi":0.2081731858717724,"qIncPbt":12.55048810724586,"qIncToi":3.235015751845121,"qIncNinc":9.315472355400738,"qIncEps":2064.12,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"JUN 2024","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":85.40526571637719,"qIncEbi":14.594734283622818,"qIncDep":3.0110462329761307,"qIncPbi":11.583688050646689,"qIncIoi":0.1801003871816794,"qIncPbt":11.403587663465009,"qIncToi":2.9242405785981087,"qIncNinc":8.4793470848669,"qIncEps":18.33,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"SEP 2024","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":86.26242218942235,"qIncEbi":13.737577810577653,"qIncDep":2.9711837292237733,"qIncPbi":10.76639408135388,"qIncIoi":0.1671380375691013,"qIncPbt":10.599256043784779,"qIncToi":2.718098809119996,"qIncNinc":7.881157234664783,"qIncEps":16.93,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"DEC 2024","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":87.45002208085738,"qIncEbi":12.549977919142624,"qIncDep":3.1219846014138852,"qIncPbi":9.427993317728738,"qIncIoi":0.17694284905810048,"qIncPbt":9.251050468670636,"qIncToi":2.3797007659038414,"qIncNinc":6.871349702766795,"qIncEps":14.29,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"MAR 2025","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":84.89106803027681,"qIncEbi":15.108931969723182,"qIncDep":2.922061106807435,"qIncPbi":12.186870862915747,"qIncIoi":0.20110347958606842,"qIncPbt":11.985767383329678,"qIncToi":3.0912084170346215,"qIncNinc":8.894558966295056,"qIncEps":19.87,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"JUN 2025","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":85.56604743779496,"qIncEbi":14.433952562205041,"qIncDep":3.176091418701478,"qIncPbi":11.257861143503565,"qIncIoi":0.1487279937597992,"qIncPbt":11.109133149743764,"qIncToi":2.8745458624088647,"qIncNinc":8.234587287334898,"qIncEps":16.85,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"SEP 2025","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":84.96419009011403,"qIncEbi":15.035809909885975,"qIncDep":2.925158955755784,"qIncPbi":12.110650954130191,"qIncIoi":0.0941666953990017,"qIncPbt":12.016484258731191,"qIncToi":3.1297143402989933,"qIncNinc":8.886769918432195,"qIncEps":19.35,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"DEC 2025","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":87.58312226836924,"qIncEbi":12.41687773163076,"qIncDep":3.1221146678347975,"qIncPbi":9.294763063795964,"qIncIoi":0.14936482894680506,"qIncPbt":9.145398234849159,"qIncToi":2.3693620403641846,"qIncNinc":6.776036194484975,"qIncEps":15.19,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"MAR 2026","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":88.39484488825082,"qIncEbi":11.605155111749186,"qIncDep":3.043514312251083,"qIncPbi":8.561640799498104,"qIncIoi":0.1974912818576592,"qIncPbt":8.364149517640444,"qIncToi":1.8160645364169856,"qIncNinc":6.548084981223458,"qIncEps":15.45,"qIncDps":null,"qIncPyr":null},{"displayPeriod":"JUN 2026","reporting":"consolidated","qIncTrev":100,"qIncCrev":null,"qIncGpro":null,"qIncOpc":null,"qIncRaw":0,"qIncPfc":0,"qIncEpc":0,"qIncSga":0,"qIncOpe":89.2463724486724,"qIncEbi":10.753627551327591,"qIncDep":3.3542055512071767,"qIncPbi":7.399422000120416,"qIncIoi":0.16454934071888735,"qIncPbt":7.234872659401528,"qIncToi":1.8846408573664881,"qIncNinc":5.35023180203504,"qIncEps":10.94,"qIncDps":null,"qIncPyr":null}]}},"balance":{"normal":[{"displayPeriod":"FY 2021","endDate":"2021-03-31T00:00:00.000Z","reporting":"consolidated","balCsti":11567.63,"balTrec":2464.95,"balTinv":2563.32,"balOca":810.8299999999999,"balTca":17406.729999999996,"balNetl":null,"balNppe":7635.862000000001,"balGint":469.498,"balLti":0,"balOtha":769.07,"balTota":26730.569999999996,"balAccp":6190.22,"balTdep":null,"balOcl":2951.9900000000007,"balTcl":9142.210000000001,"balTltd":820.5399999999998,"balTdeb":1353.9399999999998,"balDit":null,"balMint":0,"balOthl":1456.4799999999948,"balTotl":11419.229999999996,"balComs":812.54,"balApic":0,"balRtne":14498.8,"balOeq":0,"balTeq":15311.34,"balTlse":26730.569999999996,"balTcso":81.25411,"balTpso":null,"balNca":9323.84,"balCa":17406.729999999996,"balNcl":2277.0199999999945,"balDta":449.41},{"displayPeriod":"FY 2022","endDate":"2022-03-31T00:00:00.000Z","reporting":"consolidated","balCsti":14138.84,"balTrec":2182.41,"balTinv":2881.12,"balOca":877.4800000000001,"balTca":20079.85,"balNetl":null,"balNppe":6861.191999999999,"balGint":339.148,"balLti":0,"balOtha":462.21,"balTota":28358.07,"balAccp":5528.42,"balTdep":null,"balOcl":3663.8200000000015,"balTcl":9192.240000000002,"balTltd":797.4499999999999,"balTdeb":1177.6699999999998,"balDit":null,"balMint":0,"balOthl":1512.1299999999967,"balTotl":11501.819999999998,"balComs":812.54,"balApic":0,"balRtne":16043.71,"balOeq":0,"balTeq":16856.25,"balTlse":28358.07,"balTcso":81.25411,"balTpso":null,"balNca":8278.22,"balCa":20079.85,"balNcl":2309.5799999999967,"balDta":615.67},{"displayPeriod":"FY 2023","endDate":"2023-03-31T00:00:00.000Z","reporting":"consolidated","balCsti":17741.15,"balTrec":2897.19,"balTinv":3422.41,"balOca":1301.2200000000003,"balTca":25361.97,"balNetl":null,"balNppe":7192.386999999999,"balGint":294.683,"balLti":0,"balOtha":897.7,"balTota":34573.34,"balAccp":7820.81,"balTdep":null,"balOcl":4184.709999999998,"balTcl":12005.519999999999,"balTltd":733.2900000000001,"balTdeb":1189.3500000000001,"balDit":null,"balMint":0,"balOthl":1779.709999999998,"balTotl":14518.519999999997,"balComs":812.54,"balApic":0,"balRtne":19242.28,"balOeq":0,"balTeq":20054.82,"balTlse":34573.34,"balTcso":81.25411,"balTpso":null,"balNca":9211.369999999999,"balCa":25361.97,"balNcl":2512.999999999998,"balDta":826.6},{"displayPeriod":"FY 2024","endDate":"2024-03-31T00:00:00.000Z","reporting":"consolidated","balCsti":9017.35,"balTrec":2510.03,"balTinv":3315.63,"balOca":1281.04,"balTca":16124.050000000003,"balNetl":null,"balNppe":8014.915,"balGint":252.345,"balLti":0,"balOtha":1010.14,"balTota":26349.24,"balAccp":7493.06,"balTdep":null,"balOcl":5504.13,"balTcl":12997.19,"balTltd":678.56,"balTdeb":833.24,"balDit":null,"balMint":0,"balOthl":2007.8300000000015,"balTotl":15683.580000000002,"balComs":812.54,"balApic":0,"balRtne":9853.12,"balOeq":0,"balTeq":10665.66,"balTlse":26349.24,"balTcso":0.8125411,"balTpso":null,"balNca":10225.189999999999,"balCa":16124.050000000003,"balNcl":2686.3900000000012,"balDta":947.79},{"displayPeriod":"FY 2025","endDate":"2025-03-31T00:00:00.000Z","reporting":"consolidated","balCsti":8579.17,"balTrec":2389.12,"balTinv":3404.36,"balOca":1659.69,"balTca":16032.340000000002,"balNetl":null,"balNppe":11669.875,"balGint":153.585,"balLti":0,"balOtha":1209.45,"balTota":30097.350000000002,"balAccp":7086.21,"balTdep":null,"balOcl":4180.11,"balTcl":11266.32,"balTltd":583.4300000000001,"balTdeb":850.23,"balDit":null,"balMint":0,"balOthl":1951.1400000000017,"balTotl":13800.890000000001,"balComs":812.54,"balApic":0,"balRtne":15483.92,"balOeq":0,"balTeq":16296.46,"balTlse":30097.35,"balTcso":81.25411,"balTpso":null,"balNca":14065.01,"balCa":16032.340000000002,"balNcl":2534.5700000000015,"balDta":1032.1},{"displayPeriod":"FY 2026","endDate":"2026-03-31T00:00:00.000Z","reporting":"consolidated","balCsti":10551.98,"balTrec":2193.7,"balTinv":3593.51,"balOca":2137.52,"balTca":18476.71,"balNetl":null,"balNppe":13716.699999999999,"balGint":78.51,"balLti":7.36,"balOtha":1139.84,"balTota":34404.259999999995,"balAccp":7200.61,"balTdep":null,"balOcl":4675.070000000001,"balTcl":11875.68,"balTltd":534.6,"balTdeb":1097.56,"balDit":null,"balMint":0,"balOthl":1978.9599999999928,"balTotl":14389.239999999993,"balComs":812.54,"balApic":0,"balRtne":19202.48,"balOeq":0,"balTeq":20015.02,"balTlse":34404.259999999995,"balTcso":81.25411,"balTpso":null,"balNca":15927.55,"balCa":18476.71,"balNcl":2513.5599999999927,"balDta":985.14}],"growth":[{"balCsti":11567.63,"balTrec":2464.95,"balTinv":2563.32,"balOca":810.8299999999999,"balTca":17406.729999999996,"balNetl":null,"balNppe":7635.862000000001,"balGint":469.498,"balLti":0,"balOtha":769.07,"balTota":26730.569999999996,"balAccp":6190.22,"balTdep":null,"balOcl":2951.9900000000007,"balTcl":9142.210000000001,"balTltd":820.5399999999998,"balTdeb":1353.9399999999998,"balDit":null,"balMint":0,"balOthl":1456.4799999999948,"balTotl":11419.229999999996,"balComs":812.54,"balApic":0,"balRtne":14498.8,"balOeq":0,"balTeq":15311.34,"balTlse":26730.569999999996,"balTcso":81.25411,"balTpso":null,"balNca":9323.84,"balCa":17406.729999999996,"balNcl":2277.0199999999945,"balDta":449.41,"displayPeriod":"FY 2021","reporting":"consolidated"},{"balCsti":22.227630033118288,"balTrec":-11.462301466561188,"balTinv":12.397983864675487,"balOca":8.219972127326345,"balTca":15.35681888556899,"balNetl":null,"balNppe":-10.145154535270567,"balGint":-27.76369654396823,"balLti":null,"balOtha":-39.900139129077985,"balTota":6.088534587926871,"balAccp":-10.691057829931733,"balTdep":null,"balOcl":24.113564070339017,"balTcl":0.5472418594628722,"balTltd":-2.814000536232228,"balTdeb":-13.01904072558607,"balDit":null,"balMint":null,"balOthl":3.820855761836902,"balTotl":0.7232536694680989,"balComs":0,"balApic":null,"balRtne":10.655433553121638,"balOeq":null,"balTeq":10.089972530163918,"balTlse":6.088534587926871,"balTcso":0,"balTpso":null,"balNca":-11.214478154923302,"balCa":15.35681888556899,"balNcl":1.4299391309695257,"balDta":36.99517144700828,"displayPeriod":"FY '21 - FY '22"},{"balCsti":25.47811560212861,"balTrec":32.751866056332226,"balTinv":18.78748542233576,"balOca":48.29055932898756,"balTca":26.305574991845074,"balNetl":null,"balNppe":4.827076694545201,"balGint":-13.11079528701335,"balLti":null,"balOtha":94.2190779083101,"balTota":21.917112130691535,"balAccp":41.46555435368514,"balTdep":null,"balOcl":14.217128570726631,"balTcl":30.604945040599425,"balTltd":-8.045645495015345,"balTdeb":0.9917888712457897,"balDit":null,"balMint":null,"balOthl":17.695568502708227,"balTotl":26.228023043309662,"balComs":0,"balApic":null,"balRtne":19.936598205776594,"balOeq":null,"balTeq":18.975572858731926,"balTlse":21.917112130691535,"balTcso":0,"balTpso":null,"balNca":11.272350819379042,"balCa":26.305574991845074,"balNcl":8.807661999151437,"balDta":34.260236815176974,"displayPeriod":"FY '22 - FY '23"},{"balCsti":-49.17268609983006,"balTrec":-13.363293398085727,"balTinv":-3.120023609094169,"balOca":-1.5508522770938264,"balTca":-36.42429984736989,"balNetl":null,"balNppe":11.436092079027468,"balGint":-14.367303169846918,"balLti":null,"balOtha":12.525342542051904,"balTota":-23.787403820400332,"balAccp":-4.190742391133399,"balTdep":null,"balOcl":31.52954446066758,"balTcl":8.260117012840777,"balTltd":-7.463622850441179,"balTdeb":-29.94156472022534,"balDit":null,"balMint":null,"balOthl":12.817818633373065,"balTotl":8.024647140342164,"balComs":0,"balApic":null,"balRtne":-48.7944256086077,"balOeq":null,"balTeq":-46.81747330566916,"balTlse":-23.787403820400332,"balTcso":-99,"balTpso":null,"balNca":11.006180405303443,"balCa":-36.42429984736989,"balNcl":6.899721448468093,"balDta":14.661263005081048,"displayPeriod":"FY '23 - FY '24"},{"balCsti":-4.859299018004184,"balTrec":-4.817073899515157,"balTinv":2.676112835268109,"balOca":29.55801536251796,"balTca":-0.5687776954301241,"balNetl":null,"balNppe":45.60198080703289,"balGint":-39.13689591630506,"balLti":null,"balOtha":19.7309283861643,"balTota":14.224736652745962,"balAccp":-5.429690940683784,"balTdep":null,"balOcl":-24.055027770056313,"balTcl":-13.317263193044042,"balTltd":-14.019394010846483,"balTdeb":2.0390283711775727,"balDit":null,"balMint":null,"balOthl":-2.8234462080952962,"balTotl":-12.004210773305587,"balComs":0,"balApic":null,"balRtne":57.14738072813483,"balOeq":null,"balTeq":52.79373240849604,"balTlse":14.22473665274595,"balTcso":9899.999999999998,"balTpso":null,"balNca":37.55255403567075,"balCa":-0.5687776954301241,"balNcl":-5.651450459538624,"balDta":8.895430422350938,"displayPeriod":"FY '24 - FY '25"},{"balCsti":22.9953480348332,"balTrec":-8.179580766139837,"balTinv":5.556110399605214,"balOca":28.790316263880598,"balTca":15.246495520928304,"balNetl":null,"balNppe":17.539390953202144,"balGint":-48.881726731126086,"balLti":null,"balOtha":-5.75550870230271,"balTota":14.309930940763861,"balAccp":1.614403185906142,"balTdep":null,"balOcl":11.840836724392444,"balTcl":5.408687131201676,"balTltd":-8.369470202080803,"balTdeb":29.08977570774966,"balDit":null,"balMint":null,"balOthl":1.425833102698476,"balTotl":4.263130856053423,"balComs":0,"balApic":null,"balRtne":24.01562395052415,"balOeq":null,"balTeq":22.818207144373694,"balTlse":14.309930940763877,"balTcso":0,"balTpso":null,"balNca":13.242365273824896,"balCa":15.246495520928304,"balNcl":-0.8289374529016301,"balDta":-4.549946710590053,"displayPeriod":"FY '25 - FY '26"}]},"cashflow":{"normal":[{"displayPeriod":"FY 2021","endDate":"2021-03-31T00:00:00.000Z","reporting":"consolidated","cafCiwc":1089.5900000000001,"cafCfoa":5422.52,"cafCexp":2582.89,"cafCfia":-2223.65,"cafTcdp":0,"cafCffa":143.45,"cafFee":null,"cafNcic":3342.32,"cafFcf":2839.6300000000006},{"displayPeriod":"FY 2022","endDate":"2022-03-31T00:00:00.000Z","reporting":"consolidated","cafCiwc":-436.43000000000006,"cafCfoa":5138.41,"cafCexp":1264.98,"cafCfia":-910.17,"cafTcdp":1359.38,"cafCffa":-1662.04,"cafFee":null,"cafNcic":2566.2,"cafFcf":3873.43},{"displayPeriod":"FY 2023","endDate":"2023-03-31T00:00:00.000Z","reporting":"consolidated","cafCiwc":-1148.98,"cafCfoa":6564.26,"cafCexp":2260.98,"cafCfia":-1382.72,"cafTcdp":1493.45,"cafCffa":-1579.23,"cafFee":null,"cafNcic":3602.31,"cafFcf":4303.280000000001},{"displayPeriod":"FY 2024","endDate":"2024-03-31T00:00:00.000Z","reporting":"consolidated","cafCiwc":-84.86999999999989,"cafCfoa":9251.96,"cafCexp":3246.21,"cafCfia":-10089.81,"cafTcdp":15435.84,"cafCffa":-15930.07,"cafFee":null,"cafNcic":-16767.92,"cafFcf":6005.749999999999},{"displayPeriod":"FY 2025","endDate":"2025-03-31T00:00:00.000Z","reporting":"consolidated","cafCiwc":-4853.2699999999995,"cafCfoa":4344.92,"cafCexp":5306.84,"cafCfia":-409.57,"cafTcdp":0,"cafCffa":-62.85,"cafFee":null,"cafNcic":3872.5,"cafFcf":-961.9200000000001},{"displayPeriod":"FY 2026","endDate":"2026-03-31T00:00:00.000Z","reporting":"consolidated","cafCiwc":-1643.1,"cafCfoa":7321.13,"cafCexp":4266.39,"cafCfia":-1864.46,"cafTcdp":1706.34,"cafCffa":-1590.72,"cafFee":null,"cafNcic":3865.95,"cafFcf":3054.74}],"growth":[{"cafCiwc":1089.5900000000001,"cafCfoa":5422.52,"cafCexp":2582.89,"cafCfia":-2223.65,"cafTcdp":0,"cafCffa":143.45,"cafFee":null,"cafNcic":3342.32,"cafFcf":2839.6300000000006,"displayPeriod":"FY 2021","reporting":"consolidated"},{"cafCiwc":-140.05451591883187,"cafCfoa":-5.239445866497506,"cafCexp":-51.02462745219503,"cafCfia":59.06864839340723,"cafTcdp":null,"cafCffa":-1258.6197281282678,"cafFee":null,"cafNcic":-23.22099619426028,"cafFcf":36.406151505653874,"displayPeriod":"FY '21 - FY '22"},{"cafCiwc":-163.26787801021925,"cafCfoa":27.748856163677097,"cafCexp":78.73642271024048,"cafCfia":-51.9188722985816,"cafTcdp":9.862584413482612,"cafCffa":4.982431229091956,"cafFee":null,"cafNcic":40.37526303483751,"cafFcf":11.097399462491921,"displayPeriod":"FY '22 - FY '23"},{"cafCiwc":92.6134484499295,"cafCfoa":40.94444766051312,"cafCexp":43.57535228086936,"cafCfia":-629.7073883360333,"cafTcdp":933.569252402156,"cafCffa":-908.7238717602883,"cafFee":null,"cafNcic":-565.4768745610455,"cafFcf":39.562147942964394,"displayPeriod":"FY '23 - FY '24"},{"cafCiwc":-5618.475315187941,"cafCfoa":-53.03784279222997,"cafCexp":63.47802514316695,"cafCfia":95.94075606973769,"cafTcdp":-100,"cafCffa":99.60546312728067,"cafFee":null,"cafNcic":123.09469510827819,"cafFcf":-116.0166507097365,"displayPeriod":"FY '24 - FY '25"},{"cafCiwc":66.14447578642853,"cafCfoa":68.49861447391436,"cafCexp":-19.605829457831778,"cafCfia":-355.22377127231,"cafTcdp":null,"cafCffa":-2430.978520286396,"cafFee":null,"cafNcic":-0.16914138153647984,"cafFcf":417.5669494344644,"displayPeriod":"FY '25 - FY '26"}]},"holdings":[{"date":"2025-06-30T00:00:00.000Z","data":{"pmPctT":82.49999907696977,"pmPctP":0,"plPctT":0,"uPlPctT":82.49999907696977,"mfPctT":6.021132346413,"isPctT":1.5818759198765453,"diPctT":7.7603835670589465,"othDiPctT":1.7392512206459463,"othExInsDiPctT":0.15737530076940098,"fiPctT":7.0745637359144045,"rhPctT":2.301231285408209,"othPctT":0.3638223346486682,"rOthPctT":2.6650536200568773}},{"date":"2025-09-30T00:00:00.000Z","data":{"pmPctT":82.49999907696977,"pmPctP":0,"plPctT":0,"uPlPctT":82.49999907696977,"mfPctT":6.002893392100412,"isPctT":1.559614522883827,"diPctT":7.739501915656943,"othDiPctT":1.736608523556531,"othExInsDiPctT":0.176994000672704,"fiPctT":7.346081570519941,"rhPctT":2.077788188191342,"othPctT":0.33662924866200195,"rOthPctT":2.414417436853344}},{"date":"2025-12-31T00:00:00.000Z","data":{"pmPctT":82.49999907696977,"pmPctP":0,"plPctT":0,"uPlPctT":82.49999907696977,"mfPctT":5.796449804200673,"isPctT":2.6890028085963897,"diPctT":8.591972762977775,"othDiPctT":2.795522958777102,"othExInsDiPctT":0.10652015018071248,"fiPctT":6.430998751940057,"rhPctT":2.1421163803283303,"othPctT":0.33491302778406595,"rOthPctT":2.4770294081123962}},{"date":"2026-03-31T00:00:00.000Z","data":{"pmPctT":82.49999907696977,"pmPctP":0,"plPctT":0,"uPlPctT":82.49999907696977,"mfPctT":6.226639735516148,"isPctT":3.3655771997256507,"diPctT":9.703527366184924,"othDiPctT":3.4768876306687755,"othExInsDiPctT":0.11131043094312476,"fiPctT":5.421394930053385,"rhPctT":2.0412759428415375,"othPctT":0.3338026839503825,"rOthPctT":2.37507862679192}},{"date":"2026-06-30T00:00:00.000Z","data":{"pmPctT":82.49999907696977,"pmPctP":0,"plPctT":0,"uPlPctT":82.49999907696977,"mfPctT":7.993472945553154,"isPctT":3.587134853855393,"diPctT":11.693674695347719,"othDiPctT":3.700201749794565,"othExInsDiPctT":0.11306689593917207,"fiPctT":3.2801438597998307,"rhPctT":2.1383676468796473,"othPctT":0.3878147210030316,"rOthPctT":2.526182367882679}},{"date":"2026-09-30T00:00:00.000Z","data":{"pmPctT":82.49999907696977,"pmPctP":0,"plPctT":0,"uPlPctT":82.49999907696977,"mfPctT":7.994121651200167,"isPctT":3.6558974062973553,"diPctT":11.901173737550014,"othDiPctT":3.9070520863498466,"othExInsDiPctT":0.2511546800524913,"fiPctT":3.1890146849187078,"rhPctT":1.9843140242382817,"othPctT":0.4254984763232248,"rOthPctT":2.4098125005615065}}],"mfHoldings":[{"name":"HDFC Flexi Cap Fund - Growth - Direct Plan","pctOfCompany":1.1321637047321664,"change3m":0.07362357073577996,"pctOfFund":1.68397132142393,"rank":51,"prevRank":50},{"name":"HDFC Balanced Advantage Fund - Growth - Direct Plan","pctOfCompany":0.5230078525901569,"change3m":0.07583333929387603,"pctOfFund":0.786989113799913,"rank":28,"prevRank":179},{"name":"ICICI Prudential Value Fund - Growth - Direct Plan","pctOfCompany":0.47802699308649776,"change3m":-0.39902363807095,"pctOfFund":1.28470981290258,"rank":45,"prevRank":44},{"name":"ICICI Prudential Large Cap Fund - Growth - Direct Plan","pctOfCompany":0.35994475156820976,"change3m":-0.22522350106572697,"pctOfFund":0.761127325915367,"rank":64,"prevRank":64},{"name":"HDFC Focused Fund - Growth - Direct Plan","pctOfCompany":0.3400837622948965,"change3m":0.17051233700147983,"pctOfFund":1.94701694059426,"rank":23,"prevRank":22}],"smallcases":[{"name":"The Great Indian Middle Class Theme","publisher":"Windmill Capital","description":"Companies focused on the growing middle class. Running India's consumption engine"},{"name":"Auto Tracker","publisher":"Windmill Capital","description":"Companies to efficiently track and invest in the auto sector"}],"dividends":[{"exDate":"2026-08-05T00:00:00.000Z","kind":"Final","declared":"21","adjusted":21},{"exDate":"2025-08-05T00:00:00.000Z","kind":"Final","declared":"21","adjusted":21}],"upcomingDividends":[],"actions":[],"announcements":[{"date":"2026-10-26T07:52:37.000Z","subject":"Press Release","detail":"Hyundai Motor India Limited has informed the Exchange regarding a press release dated October 26, 2026, titled \"Hyundai Motor India launches Hyundai BAYON at INR 9 99 900:A New Era of Intelligent Mobility, Engineered for the Future\".","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_26102026132115_BAYONPR26102026.pdf"},{"date":"2026-10-22T11:35:31.000Z","subject":"Analysts/Institutional Investor Meet/Con. Call Updates","detail":"Hyundai Motor India Limited has informed the Exchange about Schedule of Earning conference call on Oct 28, 2026 for Q2 results","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_22102026165958_EARNINGCALL28102026.pdf"},{"date":"2026-10-14T11:35:13.000Z","subject":"Press Release","detail":"Hyundai Motor India Limited has informed the Exchange regarding a press release dated October 14, 2026, titled \"Hon ble Chief Minister of Maharashtra Shri. Devendra Fadnavis Inaugurates Hyundai Motor India s Pune Plant\".","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_14102026170456_PRPUNEPLANT14102026.pdf"},{"date":"2026-10-13T13:58:45.000Z","subject":"Press Release","detail":"Hyundai Motor India Limited has informed the Exchange regarding a press release dated October 13, 2026, titled \"Hyundai Motor Group to Accelerate India Growth with USD 15.5 Billion Automotive Ecosystem Investment\".","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_13102026192706_PR13102026FINAL.pdf"},{"date":"2026-10-07T05:25:00.063Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Compliances-Certificate under Reg. 74 (5) of SEBI (DP) Regulations, 2018","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/72b20c14-af03-44aa-adbd-34513081be08.pdf"},{"date":"2026-10-07T05:24:24.000Z","subject":"Certificate under SEBI (Depositories and Participants) Regulations, 2018","detail":"Hyundai Motor India Limited has informed the Exchange about Certificate under SEBI (Depositories and Participants) Regulations, 2018","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_07102026105403_DPREGCERTIFICATE__2_.pdf"},{"date":"2026-10-01T04:22:18.483Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Announcement under Regulation 30 (LODR)-Press Release / Media Release","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/63932d70-c406-4750-b9d8-e81fd2f259e8.pdf"},{"date":"2026-10-01T04:21:59.000Z","subject":"Press Release","detail":"Hyundai Motor India Limited has informed the Exchange regarding a press release dated October 01, 2026, titled \"Hyundai Motor India Limited Achieves Highest-ever Total Monthly Sales of 77,916 Units in September 2026, registering 10.8% YoY growth\".","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_01102026095127_PRSALESNUMBER.pdf"},{"date":"2026-09-25T11:20:37.000Z","subject":"Trading Window","detail":"Hyundai Motor India Limited has informed the Exchange regarding the Trading Window closure pursuant to SEBI (Prohibition of Insider Trading) Regulations, 2015","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_25092026165012_TradingWindow.pdf"},{"date":"2026-09-25T11:17:44.403Z","subject":"Insider Trading / SAST","detail":"Hyundai Motor India Ltd - 544274 - Closure of Trading Window","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/bad12750-dd1d-4266-b604-6cc899a15538.pdf"},{"date":"2026-09-18T13:24:57.270Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/bb8fc0b4-fe3e-4a0f-9524-3f0ea5169d3c.pdf"},{"date":"2026-09-18T13:24:57.000Z","subject":"Company Update","detail":"Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/bb8fc0b4-fe3e-4a0f-9524-3f0ea5169d3c.pdf"},{"date":"2026-09-18T13:24:33.000Z","subject":"Analysts/Institutional Investor Meet/Con. Call Updates","detail":"Hyundai Motor India Limited has informed the Exchange about Schedule of meet","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_18092026185419_INVMEET24092026.pdf"},{"date":"2026-09-15T08:18:41.000Z","subject":"Analysts/Institutional Investor Meet/Con. Call Updates","detail":"Hyundai Motor India Limited has informed the Exchange about Schedule of meet","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_15092026134509_InvestorMeet.pdf"},{"date":"2026-09-15T08:18:11.490Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/7301f596-f00f-402e-87af-0c1d6ca181b1.pdf"},{"date":"2026-09-15T08:18:11.000Z","subject":"Company Update","detail":"Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Intimation","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/7301f596-f00f-402e-87af-0c1d6ca181b1.pdf"},{"date":"2026-09-14T05:06:35.000Z","subject":"Press Release","detail":"Hyundai Motor India Limited has informed the Exchange regarding a press release dated September 14, 2026, titled \"Hyundai Motor India Announces the Name of Its Much-Awaited Intelligent SUV\".","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_14092026103622_PRBAYON.pdf"},{"date":"2026-09-14T05:04:55.827Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Announcement under Regulation 30 (LODR)-Press Release / Media Release","link":"https://www.bseindia.com/xml-data/corpfiling/AttachLive/09e8748a-fc00-4450-a290-813ab94aa63f.pdf"},{"date":"2026-09-03T11:11:16.000Z","subject":"Resignation of Director/KMP/SMP","detail":"Hyundai Motor India Limited has informed the Exchange about Resignation of Director/KMP/SMP","link":"https://nsearchives.nseindia.com/corporate/HYUNDAI_ROID_97814_KMP_Doc.zip"},{"date":"2026-09-03T10:46:31.000Z","subject":"Change in Management","detail":"Hyundai Motor India Limited has informed the Exchange about change in Senior Management Personnel","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_03092026161419_HMILSMPCHANGE.pdf"},{"date":"2026-09-03T10:46:01.343Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Announcement under Regulation 30 (LODR)-Change in Management","link":"https://www.bseindia.com/xml-data/corpfiling/AttachHis/e1f10fab-119b-4a0b-883a-3b53dc962170.pdf"},{"date":"2026-09-01T05:47:23.840Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Announcement under Regulation 30 (LODR)-Press Release / Media Release","link":"https://www.bseindia.com/xml-data/corpfiling/AttachHis/0564a98b-39df-4a98-bbdd-029df37647e5.pdf"},{"date":"2026-09-01T05:47:05.000Z","subject":"Press Release","detail":"Hyundai Motor India Limited has informed the Exchange regarding a press release dated September 01, 2026, titled \"Hyundai Motor India Limited Achieves Domestic Monthly Sales of 54,396 Units in August 2026 (23.6% Growth YoY) Highest-ever for any August month\".","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_01092026111652_PRSalesnumber.pdf"},{"date":"2026-08-31T08:58:09.000Z","subject":"General Updates","detail":"Hyundai Motor India Limited has informed the Exchange about ESG Rating","link":"https://nsearchives.nseindia.com/corporate/HMILNSE_31082026142751_ESGRating.pdf"},{"date":"2026-08-31T08:54:58.853Z","subject":"Company Update","detail":"Hyundai Motor India Ltd - 544274 - Disclosure Under Regulation 30 Of The SEBI (Listing Obligations And Disclosure Requirements) Regulations, 2015 ('Listing Regulations') - ESG Rating(S)","link":"https://www.bseindia.com/xml-data/corpfiling/AttachHis/66896ddb-6880-46f5-8a93-e268a3304939.pdf"}],"legal":[],"annualReports":[{"year":2025,"link":"https://www.bseindia.com/xml-data/corpfiling/AttachHis/6fe25964-6863-41ee-9f5c-fa5e271dda5d.pdf"},{"year":2026,"link":"https://www.bseindia.com/xml-data/corpfiling/AttachHis/92a51726-0e33-4b20-89cb-a218491d22fd.pdf"}],"presentations":[{"date":"2026-07-30T10:01:33.000Z","detail":"Hyundai Motor India Limited has informed the Exchange about Investor Presentation"},{"date":"2026-05-08T10:07:05.000Z","detail":"Hyundai Motor India Limited has informed the Exchange about Investor Presentation"},{"date":"2026-02-02T09:23:06.000Z","detail":"Hyundai Motor India Limited has informed the Exchange about Investor Presentation"},{"date":"2025-10-30T09:24:04.000Z","detail":"Hyundai Motor India Limited has informed the Exchange about Investor Presentation"},{"date":"2025-07-30T09:31:46.000Z","detail":"Hyundai Motor India Limited has informed the Exchange about Investor Presentation"},{"date":"2025-05-16T09:38:12.000Z","detail":"Hyundai Motor India Limited has informed the Exchange about Investor Presentation"},{"date":"2024-11-12T09:08:31.000Z","detail":"Hyundai Motor India Limited has informed the Exchange about Investor Presentation"}],"errors":[],"generated":"2026-10-26","insights":[{"id":"quarter_yoy","category":"Latest results","tone":"caution","title":"Jun 2026 quarter: revenue −0.1% year on year, net income −35.1%","detail":"Compared with the same quarter a year earlier, revenue is −0.1% and net income −35.1%. The Mar 2026 quarter was revenue +5.7%, net income −22.2%.","priority":100,"evidence":["Jun 2026 quarter: revenue ₹16,609 cr, net income ₹889 cr","Previous quarter year-on-year: revenue +5.7%, net income −22.2%"],"rule":"Latest quarter vs the same quarter a year earlier; net income up 15% or more is positive, down more than 10% is a caution","facts":{"label":"June 2026","rev":-0.11228271910614929,"ni":-35.10027606958701,"prev_rev":5.651117970055952,"prev_ni":-22.220708024901757}},{"id":"latest_fy","category":"Latest results","tone":"caution","title":"FY26: revenue +2.4%, net income −3.7%","detail":"Against FY25, revenue went from ₹70,104 cr to ₹71,752 cr and net income from ₹5,640 cr to ₹5,432 cr.","priority":99,"evidence":["FY25: revenue ₹70,104 cr, net income ₹5,640 cr","FY26: revenue ₹71,752 cr, net income ₹5,432 cr"],"rule":"Net income growth of 10% or more is positive; any decline is a caution","facts":{"label":"FY26","prev_label":"FY25","rev_g":2.3504091541200367,"ni_g":-3.7003875735342806,"state":"growth","ni_prev":5640.220000000001,"ni_cur":5431.510000000006}},{"id":"cash_conversion","category":"Cash flow","tone":"positive","title":"Operating cash flow was 1.22× net income over three years","detail":"FY24 to FY26: operating cash flow ₹20,918 cr against net income ₹17,132 cr.","priority":80,"evidence":["FY24: operating cash flow ₹9,252 cr, net income ₹6,060 cr","FY25: operating cash flow ₹4,345 cr, net income ₹5,640 cr","FY26: operating cash flow ₹7,321 cr, net income ₹5,432 cr"],"rule":"Positive at 1.0× or more, caution below 0.7×","facts":{"ratio":1.2210069362360103,"years":3}},{"id":"ni_cagr","category":"Growth","tone":"positive","title":"Net income compounding at 23.6% a year over 5 years","detail":"Net income went from ₹1,881 cr (FY21) to ₹5,432 cr (FY26): 23.6% compound annual growth over 5 years (strong).","priority":78,"evidence":["FY21: ₹1,881 cr","FY22: ₹2,902 cr","FY23: ₹4,709 cr","FY24: ₹6,060 cr","FY25: ₹5,640 cr","FY26: ₹5,432 cr"],"rule":"Compound annual growth over the last 5 fiscal years; strong at 12% or more, slow below 5%, shrinking below 0%","facts":{"metric":"net income","n":5,"start_label":"FY21","end_label":"FY26","start":1881.1600000000014,"end":5431.510000000006,"step":null,"kind":"cagr","cagr":23.62291205045004}},{"id":"leverage","category":"Balance sheet","tone":"positive","title":"Debt-to-equity 0.05 in FY26","detail":"Total debt of ₹1,098 cr against equity of ₹20,015 cr. Three years earlier it was 0.06.","priority":78,"evidence":["FY26: debt ₹1,098 cr, equity ₹20,015 cr","FY23: debt-to-equity 0.06"],"rule":"Low at 0.1 or below, high above 1.0","facts":{"de":0.05483681755001993,"old":0.059304945145356586,"debt":1097.56,"equity":20015.02}},{"id":"roe","category":"Profitability","tone":"positive","title":"Return on equity 29.9% in FY26 (31.0% five-year average)","detail":"Net income divided by average shareholders' equity. The five-year average is 31.0%.","priority":76,"evidence":["FY22: 18.0%","FY23: 25.5%","FY24: 39.5%","FY25: 41.8%","FY26: 29.9%"],"rule":"Strong at 15% or more, weak below 10% (other companies)","facts":{"roe":29.916213825489933,"avg":30.952855796557753,"label":"FY26","financial":false}},{"id":"div_streak","category":"Dividends","tone":"positive","title":"Dividend paid in each of the last 6 years","detail":"Dividend per share rose from ₹16.73 in FY21 to ₹21.00 in FY26.","priority":68,"evidence":["FY21: ₹16.73","FY22: ₹18.38","FY23: ₹57.27","FY24: ₹1,327.00","FY25: ₹21.00","FY26: ₹21.00"],"rule":"Consecutive fiscal years with a dividend per share above zero, shown from five years","facts":{"streak":6,"first":16.73,"last":21}},{"id":"profit_record","category":"Profitability","tone":"positive","title":"Profitable in all 6 of the last 6 years","detail":"Net income was positive every year from FY21 to FY26.","priority":66,"evidence":["FY21: ₹1,881 cr","FY22: ₹2,902 cr","FY23: ₹4,709 cr","FY24: ₹6,060 cr","FY25: ₹5,640 cr","FY26: ₹5,432 cr"],"rule":"Count of fiscal years with negative net income","facts":{"n":6,"losses":[],"latest_is_loss":false}},{"id":"fcf","category":"Cash flow","tone":"neutral","title":"Free cash flow positive in 4 of the last 5 years","detail":"Free cash flow is operating cash flow minus capital expenditure. Negative in: FY25.","priority":64,"evidence":["FY22: ₹3,873 cr","FY23: ₹4,303 cr","FY24: ₹6,006 cr","FY25: ₹−962 cr","FY26: ₹3,055 cr"],"rule":"All years positive is a strength; half or fewer is a caution","facts":{"positive":4,"of":5,"negative_labels":["FY25"]}},{"id":"tug","category":"Ownership","tone":"neutral","title":"Domestic institutions absorbed foreign selling","detail":"DII holding +4.1 pp while FII holding −3.9 pp (Jun 2025 to Sep 2026).","priority":64,"evidence":[],"rule":"FII down and DII up by one pp or more over the available history","facts":{"fii":-3.8855490509956967,"di":4.1407901704910675,"fii_first":7.0745637359144045,"fii_last":3.1890146849187078,"start":"Jun 2025","end":"Sep 2026"}},{"id":"fii","category":"Ownership","tone":"neutral","title":"Foreign institutions cut their stake 3.9 pp","detail":"FII holding went from 7.07% to 3.19% (Jun 2025 to Sep 2026).","priority":62,"evidence":["Jun 2025: 7.07%","Sep 2025: 7.35%","Dec 2025: 6.43%","Mar 2026: 5.42%","Jun 2026: 3.28%","Sep 2026: 3.19%"],"rule":"Change of 1 pp or more over the available history","facts":{"first":7.0745637359144045,"last":3.1890146849187078,"delta":-3.8855490509956967,"start":"Jun 2025","end":"Sep 2026","quarters":5}},{"id":"net_cash","category":"Balance sheet","tone":"positive","title":"Cash exceeds total debt","detail":"Cash and equivalents of ₹10,552 cr against debt of ₹1,098 cr in FY26.","priority":60,"evidence":["Cash ₹10,552 cr","Debt ₹1,098 cr"],"rule":"Cash and equivalents greater than total debt","facts":{"cash":10551.98,"debt":1097.56}},{"id":"pledge","category":"Ownership","tone":"positive","title":"No promoter shares pledged","detail":"Promoters hold 82.50% and none of it is pledged.","priority":58,"evidence":[],"rule":"Promoter pledge of zero","facts":{"pledged":0.0,"promoter":82.49999907696977}},{"id":"rev_cagr","category":"Growth","tone":"neutral","title":"Revenue compounding at 11.6% a year over 5 years","detail":"Revenue went from ₹41,405 cr (FY21) to ₹71,752 cr (FY26): 11.6% compound annual growth over 5 years (moderate).","priority":55,"evidence":["FY21: ₹41,405 cr","FY22: ₹47,966 cr","FY23: ₹61,437 cr","FY24: ₹71,356 cr","FY25: ₹70,104 cr","FY26: ₹71,752 cr"],"rule":"Compound annual growth over the last 5 fiscal years; strong at 12% or more, slow below 5%, shrinking below 0%","facts":{"metric":"revenue","n":5,"start_label":"FY21","end_label":"FY26","start":41404.65,"end":71752.13,"step":null,"kind":"cagr","cagr":11.62388556841627}},{"id":"mgmt_changes","category":"Filings","tone":"neutral","title":"3 management or board change filings in the last 90 days","detail":"Appointments, resignations and similar changes.","priority":48,"evidence":["03 Sep 2026: Resignation of Director/KMP/SMP","03 Sep 2026: Change in Management","03 Sep 2026: Company Update"],"rule":"Three or more such filings in 90 days","facts":{"count":3}},{"id":"net_margin","category":"Profitability","tone":"neutral","title":"Net margin steady near 7.6%","detail":"Net margin was 7.6% in FY26 against a median of 8.0% over FY23 to FY25.","priority":40,"evidence":["FY23: 7.7%","FY24: 8.5%","FY25: 8.0%","FY26: 7.6%"],"rule":"Latest margin vs the median of the three prior years; a gap of 2 pp or more counts as a trend","facts":{"margin":7.569824059578448,"median":8.045459064689103,"delta":-0.4756350051106555,"trend":false,"direction":"down","step_note":false,"label":"FY26"}}],"insightErrors":[],"story":{"headline":"Hyundai Motor India is a steadily growing, consistently profitable business that carries very little debt, has paid a dividend every year for the last six years and is about 82% owned by its promoters.","chapters":[{"title":"The long view","text":"Over the last five years, sales have grown about 12% a year, a steady pace. Profit has grown even faster. For every ₹100 of sales, it keeps about ₹8 as profit, and that has stayed broadly steady. Each year it earns about ₹30 on every ₹100 of shareholders' money, a strong return."},{"title":"Lately","text":"The latest full year (FY26) was a mixed one: sales rose about 2%, but profit fell about 4%. The most recent quarter (June 2026) slowed: sales were flat, but profit was about 35% lower, compared with a year earlier."},{"title":"How solid the foundation is","text":"Debt is very low and the company holds more cash than it owes. Profits have turned into real cash: over the last three years, the cash from operations was about 1.2 times reported profit. After spending on the business, it has had cash left over in four of the last five years."},{"title":"Who owns it","text":"Promoters hold about 82% of the company. None of their shares are pledged. Foreign investors have been selling: their holding fell from about 7% to 3% between Jun 2025 and Sep 2026. Indian institutions have more than made up for it."},{"title":"What shareholders get","text":"It has paid a dividend in each of the last six years, and the dividend per share has grown by about 26% over that time. In FY26 it paid out about 31% of its profit as dividends."},{"title":"Worth keeping in mind","text":"There have been three management or board changes filed in the last three months."}]}}</script>
+<script>
+(() => {
+'use strict';
+const D = JSON.parse(document.getElementById('report-data').textContent);
+const SVGNS = 'http://www.w3.org/2000/svg';
+
+/* ---------- DOM helpers (all text goes through textContent) ---------- */
+function mk(ns, tag, props, kids) {
+  const e = ns ? document.createElementNS(ns, tag) : document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') e.setAttribute('class', v);
+    else if (k === 'text') e.textContent = v;
+    else if (k === 'style') e.style.cssText = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v === true ? '' : v);
+  }
+  for (const kid of kids.flat(2)) if (kid != null && kid !== false) e.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  return e;
+}
+const h = (tag, props, ...kids) => mk(null, tag, props, kids);
+const s = (tag, props, ...kids) => mk(SVGNS, tag, props, kids);
+const frag = (...kids) => {
+  const f = document.createDocumentFragment();
+  kids.flat(3).forEach(k => { if (k != null && k !== false) f.append(k.nodeType ? k : document.createTextNode(String(k))); });
+  return f;
+};
+const fill = (el, ...kids) => el.replaceChildren(frag(...kids));
+const safeUrl = u => (typeof u === 'string' && /^https?:\/\//i.test(u)) ? u : null;
+const link = (url, text) => safeUrl(url) ? h('a', { href: url, target: '_blank', rel: 'noopener noreferrer', text }) : null;
+
+/* ---------- formatting ---------- */
+const MINUS = '−';
+function num(v, d = 0) {
+  if (v == null || !isFinite(v)) return '—';
+  return new Intl.NumberFormat('en-IN', { minimumFractionDigits: d, maximumFractionDigits: d }).format(v).replace('-', MINUS);
+}
+const pct = (v, d = 1) => v == null || !isFinite(v) ? '—' : num(v, d) + '%';
+const spct = (v, d = 1) => v == null || !isFinite(v) ? '—' : (v > 0 ? '+' : '') + num(v, d) + '%';
+function compact(v) {
+  const a = Math.abs(v), sign = v < 0 ? MINUS : '';
+  const t = (x, d) => (Math.round(x * d) / d).toString();
+  if (a >= 1e5) return sign + t(a / 1e5, 100) + 'L';
+  if (a >= 1e3) return sign + t(a / 1e3, 10) + 'K';
+  return sign + t(a, 10);
+}
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function fmtDate(iso) {
+  const d = new Date(iso); if (isNaN(d)) return '—';
+  return `${String(d.getUTCDate()).padStart(2, '0')} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+function fmtMonth(iso) {
+  const d = new Date(iso); if (isNaN(d)) return '—';
+  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+const cr = v => '₹' + num(v, 0) + ' cr';
+
+/* ---------- theme + redraw registry ---------- */
+const regs = { fin: [], own: [], div: [] };
+const drawGroup = g => regs[g].forEach(fn => fn());
+const drawAll = () => Object.keys(regs).forEach(drawGroup);
+const root = document.documentElement;
+try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') root.dataset.theme = t; } catch (e) {}
+document.getElementById('theme').addEventListener('click', () => {
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+  drawAll();
+});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawAll);
+let raf = 0, lastW = innerWidth;
+addEventListener('resize', () => {
+  if (innerWidth === lastW) return;
+  lastW = innerWidth; cancelAnimationFrame(raf); raf = requestAnimationFrame(drawAll);
+});
+const cssVar = n => getComputedStyle(root).getPropertyValue(n).trim();
+function lum(hex) {
+  const m = /^#?([0-9a-f]{6})$/i.exec(hex); if (!m) return .5;
+  const n = parseInt(m[1], 16);
+  const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(c => { c /= 255; return c <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); });
+  return .2126 * r + .7152 * g + .0722 * b;
+}
+const inkOn = hex => lum(hex) > .18 ? '#0b0b0b' : '#ffffff';
+const SC = i => `var(--s${i})`;
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById('tip');
+function showTip(title, rows, x, y) {
+  tip.replaceChildren(
+    h('div', { class: 'tip-title', text: title }),
+    ...rows.map(r => h('div', { class: 'tip-row' }, h('i', { class: 'key', style: `background:${r.color}` }), h('b', { text: r.value }), h('span', { text: r.name }))));
+  tip.hidden = false;
+  const w = tip.offsetWidth, hgt = tip.offsetHeight;
+  let nx = x + 14, ny = y + 14;
+  if (nx + w > innerWidth - 8) nx = x - w - 14;
+  if (ny + hgt > innerHeight - 8) ny = y - hgt - 14;
+  tip.style.left = Math.max(8, nx) + 'px'; tip.style.top = Math.max(8, ny) + 'px';
+}
+const hideTip = () => { tip.hidden = true; };
+function bindTip(node, getTip) {
+  const at = e => {
+    const t = getTip();
+    if (e.type === 'focus') { const r = node.getBoundingClientRect(); showTip(t.title, t.rows, r.left + r.width / 2, r.top + r.height / 3); }
+    else showTip(t.title, t.rows, e.clientX, e.clientY);
+  };
+  ['pointerenter', 'pointermove', 'focus'].forEach(ev => node.addEventListener(ev, at));
+  ['pointerleave', 'blur'].forEach(ev => node.addEventListener(ev, hideTip));
+}
+
+/* ---------- scales + marks ---------- */
+function niceNum(range, round) {
+  const exp = Math.floor(Math.log10(range)), f = range / Math.pow(10, exp);
+  const nf = round ? (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) : (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10);
+  return nf * Math.pow(10, exp);
+}
+function niceScale(min, max, n = 4) {
+  if (!(max > min)) max = min + 1;
+  const step = niceNum(niceNum(max - min, false) / n, true);
+  return { lo: Math.floor(min / step + 1e-9) * step, hi: Math.ceil(max / step - 1e-9) * step, step };
+}
+const f1 = v => Math.round(v * 100) / 100;
+// vertical bar: baseline-side square, data end rounded
+function vBar(x, w, yBase, yEnd, r) {
+  const hgt = Math.abs(yEnd - yBase); if (hgt < .5) return '';
+  r = Math.min(r, hgt, w / 2); const d = yEnd < yBase ? 1 : -1;
+  return `M${f1(x)},${f1(yBase)}V${f1(yEnd + d * r)}Q${f1(x)},${f1(yEnd)} ${f1(x + r)},${f1(yEnd)}H${f1(x + w - r)}Q${f1(x + w)},${f1(yEnd)} ${f1(x + w)},${f1(yEnd + d * r)}V${f1(yBase)}Z`;
+}
+const rectPath = (x, y0, w, y1) => `M${f1(x)},${f1(y0)}V${f1(y1)}H${f1(x + w)}V${f1(y0)}Z`;
+// horizontal bar: left square, right end rounded
+function hBar(x0, x1, y, hgt, r, round) {
+  const w = x1 - x0; if (w < .5) return '';
+  r = round ? Math.min(r, w, hgt / 2) : 0;
+  if (!r) return `M${f1(x0)},${f1(y)}H${f1(x1)}V${f1(y + hgt)}H${f1(x0)}Z`;
+  return `M${f1(x0)},${f1(y)}H${f1(x1 - r)}Q${f1(x1)},${f1(y)} ${f1(x1)},${f1(y + r)}V${f1(y + hgt - r)}Q${f1(x1)},${f1(y + hgt)} ${f1(x1 - r)},${f1(y + hgt)}H${f1(x0)}Z`;
+}
+function axisY(g, sc, y, m, W, fmt) {
+  for (let t = sc.lo; t <= sc.hi + sc.step * .001; t += sc.step) {
+    const yy = y(t);
+    g.append(s('line', { class: Math.abs(t) < sc.step * .001 ? 'axisline' : 'gridline', x1: m.l, x2: W - m.r, y1: yy, y2: yy }));
+    g.append(s('text', { x: m.l - 8, y: yy + 4, 'text-anchor': 'end', text: fmt(t) }));
+  }
+}
+function axisX(g, labels, xc, y, W, m) {
+  const fit = Math.max(1, Math.floor((W - m.l - m.r) / 44)), step = Math.ceil(labels.length / fit);
+  labels.forEach((l, i) => { if ((labels.length - 1 - i) % step === 0) g.append(s('text', { x: xc(i), y, 'text-anchor': 'middle', text: l })); });
+}
+
+/* ---------- charts ---------- */
+// series: [{name, color, values[]}] - grouped or stacked columns
+function columnChart(host, o) {
+  const W = Math.max(280, host.clientWidth), H = o.height || 230, m = { l: 46, r: 10, t: 22, b: 26 };
+  const pw = W - m.l - m.r, ph = H - m.t - m.b, n = o.labels.length, S = o.series;
+  let lo = 0, hi = 0;
+  for (let i = 0; i < n; i++) {
+    if (o.stacked) { let p = 0, q = 0; S.forEach(se => { const v = se.values[i]; if (v > 0) p += v; else if (v < 0) q += v; }); hi = Math.max(hi, p); lo = Math.min(lo, q); }
+    else S.forEach(se => { const v = se.values[i]; if (v != null) { hi = Math.max(hi, v); lo = Math.min(lo, v); } });
+  }
+  const sc = o.domain ? { lo: o.domain[0], hi: o.domain[1], step: (o.domain[1] - o.domain[0]) / 4 } : niceScale(lo, hi);
+  const y = v => m.t + ph - (v - sc.lo) / (sc.hi - sc.lo) * ph;
+  const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': o.aria });
+  const g = s('g'); svg.append(g);
+  axisY(g, sc, y, m, W, o.axisFmt || compact);
+  const band = pw / n, gap = 2, k = o.stacked ? 1 : S.length;
+  const bw = Math.min(24, Math.max(3, (band * .72 - gap * (k - 1)) / k));
+  const gw = k * bw + (k - 1) * gap, xc = i => m.l + band * i + band / 2;
+  for (let i = 0; i < n; i++) {
+    const gx = m.l + band * i + (band - gw) / 2;
+    if (o.stacked) {
+      let cum = 0; const lastPos = S.reduce((a, se, j) => se.values[i] > 0 ? j : a, -1);
+      S.forEach((se, j) => {
+        const v = se.values[i]; if (!(v > 0)) return;
+        const yb = y(cum), yt = y(cum + v); cum += v;
+        const d = j === lastPos ? vBar(gx, bw, yb, yt, 4) : rectPath(gx, yb, bw, Math.min(yt + gap, yb));
+        if (d) g.append(s('path', { d, style: `fill:${se.color}` }));
+      });
+    } else {
+      S.forEach((se, j) => {
+        const v = se.values[i]; if (v == null) return;
+        const d = vBar(gx + j * (bw + gap), bw, y(0), y(v), 4);
+        if (d) g.append(s('path', { d, style: `fill:${se.color}` }));
+      });
+    }
+  }
+  // selective label: latest value on the cap of a single series
+  if (S.length === 1 && o.labelLast !== false) {
+    let li = n - 1; while (li >= 0 && S[0].values[li] == null) li--;
+    if (li >= 0) {
+      const v = S[0].values[li], x = xc(li), anchor = x > W - 40 ? 'end' : 'middle';
+      const txt = (o.valFmt || compact)(v), tw = txt.length * 6.6, ly = v >= 0 ? y(v) - 6 : y(v) + 14;
+      const x0 = anchor === 'end' ? W - m.r - tw : x - tw / 2;
+      let clash = false;
+      if (v >= 0) for (let j = 0; j < li; j++) {
+        const vj = S[0].values[j];
+        if (vj != null && xc(j) + bw / 2 > x0 && xc(j) - bw / 2 < x0 + tw && y(Math.max(vj, 0)) < ly) clash = true;
+      }
+      if (!clash) g.append(s('text', { class: 'v', x: anchor === 'end' ? W - m.r : x, y: ly, 'text-anchor': anchor, text: txt }));
+    }
+  }
+  axisX(g, o.labels, xc, H - 8, W, m);
+  for (let i = 0; i < n; i++) {
+    const hit = s('rect', { class: 'hit', x: m.l + band * i, y: m.t, width: band, height: ph, tabindex: 0 });
+    bindTip(hit, () => ({
+      title: o.labels[i],
+      rows: S.filter(se => se.values[i] != null).map(se => ({ color: se.color, name: se.name, value: o.tipFmt(se.values[i]) })),
+    }));
+    svg.append(hit);
+  }
+  host.append(svg);
+}
+
+function lineChart(host, o) {
+  const W = Math.max(280, host.clientWidth), H = o.height || 230, m = { l: 46, r: 14, t: 18, b: 26 };
+  const pw = W - m.l - m.r, ph = H - m.t - m.b, n = o.labels.length, S = o.series;
+  let lo = Infinity, hi = -Infinity;
+  S.forEach(se => se.values.forEach(v => { if (v != null) { lo = Math.min(lo, v); hi = Math.max(hi, v); } }));
+  if (!isFinite(lo)) { lo = 0; hi = 1; }
+  const sc = niceScale(Math.min(lo, 0), Math.max(hi, 0));
+  const y = v => m.t + ph - (v - sc.lo) / (sc.hi - sc.lo) * ph;
+  const xc = i => m.l + 8 + (n < 2 ? pw / 2 : (pw - 16) * i / (n - 1));
+  const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': o.aria });
+  const g = s('g'); svg.append(g);
+  axisY(g, sc, y, m, W, o.axisFmt);
+  axisX(g, o.labels, xc, H - 8, W, m);
+  const ends = [];
+  S.forEach(se => {
+    let d = '', pen = false, last = -1;
+    se.values.forEach((v, i) => { if (v == null) { pen = false; return; } d += (pen ? 'L' : 'M') + f1(xc(i)) + ',' + f1(y(v)); pen = true; last = i; });
+    g.append(s('path', { d, fill: 'none', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', style: `stroke:${se.color}` }));
+    if (last >= 0) ends.push({ se, i: last, py: y(se.values[last]) });
+  });
+  ends.sort((a, b) => a.py - b.py);
+  ends.forEach((e, idx) => {
+    g.append(s('circle', { cx: xc(e.i), cy: e.py, r: 6, style: 'fill:var(--surface)' }));
+    g.append(s('circle', { cx: xc(e.i), cy: e.py, r: 4, style: `fill:${e.se.color}` }));
+    const clear = idx === 0 || e.py - ends[idx - 1].py >= 14;
+    if (clear) g.append(s('text', { class: 'v', x: Math.min(xc(e.i), W - m.r), y: e.py - 10, 'text-anchor': xc(e.i) > W - 44 ? 'end' : 'middle', text: o.valFmt(e.se.values[e.i]) }));
+  });
+  const cross = s('line', { class: 'cross', y1: m.t, y2: m.t + ph, style: 'display:none' });
+  const dots = S.map(se => s('circle', { r: 4, style: `fill:${se.color};stroke:var(--surface);stroke-width:2;display:none` }));
+  svg.append(cross, ...dots);
+  const overlay = s('rect', { x: m.l, y: m.t, width: pw, height: ph, fill: 'transparent', tabindex: 0 });
+  const focus = (i, cx, cy) => {
+    cross.style.display = ''; cross.setAttribute('x1', xc(i)); cross.setAttribute('x2', xc(i));
+    S.forEach((se, j) => {
+      const v = se.values[i];
+      dots[j].style.display = v == null ? 'none' : '';
+      if (v != null) { dots[j].setAttribute('cx', xc(i)); dots[j].setAttribute('cy', y(v)); }
+    });
+    showTip(o.labels[i], S.filter(se => se.values[i] != null).map(se => ({ color: se.color, name: se.name, value: o.valFmt(se.values[i]) })), cx, cy);
+  };
+  const near = e => { const r = svg.getBoundingClientRect(); const px = (e.clientX - r.left) * (W / r.width); return Math.max(0, Math.min(n - 1, Math.round((px - m.l - 8) / ((pw - 16) / Math.max(1, n - 1))))); };
+  let cur = n - 1;
+  overlay.addEventListener('pointermove', e => { cur = near(e); focus(cur, e.clientX, e.clientY); });
+  overlay.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    cur = Math.max(0, Math.min(n - 1, cur + (e.key === 'ArrowRight' ? 1 : -1)));
+    const r = overlay.getBoundingClientRect(); focus(cur, r.left + (xc(cur) - m.l) * (r.width / pw), r.top + 20); e.preventDefault();
+  });
+  const off = () => { cross.style.display = 'none'; dots.forEach(d => d.style.display = 'none'); hideTip(); };
+  overlay.addEventListener('pointerleave', off); overlay.addEventListener('blur', off);
+  svg.append(overlay); host.append(svg);
+}
+
+// 100% horizontal stacked bars, one row per snapshot
+function stackRows(host, o) {
+  const W = Math.max(300, host.clientWidth), rowH = 34, bh = 22, m = { l: 74, r: 12, t: 8, b: 24 };
+  const H = m.t + o.rows.length * rowH + m.b, pw = W - m.l - m.r;
+  const x = v => m.l + v / 100 * pw;
+  const svg = s('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': o.aria });
+  [0, 25, 50, 75, 100].forEach(t => {
+    svg.append(s('line', { class: t === 0 ? 'axisline' : 'gridline', x1: x(t), x2: x(t), y1: m.t, y2: m.t + o.rows.length * rowH }));
+    svg.append(s('text', { x: x(t), y: H - 8, 'text-anchor': t === 0 ? 'start' : t === 100 ? 'end' : 'middle', text: t + '%' }));
+  });
+  o.rows.forEach((row, i) => {
+    const y0 = m.t + i * rowH + (rowH - bh) / 2;
+    svg.append(s('text', { x: m.l - 10, y: y0 + bh / 2 + 4, 'text-anchor': 'end', text: row.label }));
+    const segs = o.series.map((se, j) => ({ se, v: row.values[j] || 0 })).filter(q => q.v > 0.0001);
+    let cum = 0;
+    segs.forEach((q, j) => {
+      const last = j === segs.length - 1;
+      const xa = x(cum), xb = x(cum + q.v) - (last ? 0 : 2); cum += q.v;
+      const d = hBar(xa, xb, y0, bh, 4, last);
+      if (d) svg.append(s('path', { d, style: `fill:${q.se.color}` }));
+      const label = q.v.toFixed(1) + '%';
+      if (xb - xa > label.length * 7 + 12) svg.append(s('text', { class: 'seg', x: (xa + xb) / 2, y: y0 + bh / 2 + 4, 'text-anchor': 'middle', style: `fill:${inkOn(cssVar(q.se.cssVar))}`, text: label }));
+    });
+    const hit = s('rect', { class: 'hit', x: 0, y: m.t + i * rowH, width: W, height: rowH, tabindex: 0 });
+    bindTip(hit, () => ({ title: row.label, rows: o.series.map((se, j) => ({ color: se.color, name: se.name, value: pct(row.values[j] || 0, 2) })) }));
+    svg.append(hit);
+  });
+  host.append(svg);
+}
+
+/* ---------- card with chart + table twin ---------- */
+function legend(series, kind) {
+  return h('div', { class: 'legend' }, series.map(se => h('span', {}, h('i', { class: kind === 'line' ? 'ln' : '', style: `background:${se.color}` }), se.name)));
+}
+function miniTable(t) {
+  return h('div', { class: 'tbl-wrap', style: 'max-height:260px;overflow:auto;margin-top:6px' }, h('table', {},
+    h('thead', {}, h('tr', {}, t.head.map((c, i) => h('th', { class: i ? 'n' : '', text: c })))),
+    h('tbody', {}, t.rows.map(r => h('tr', {}, r.map((c, i) => h('td', { class: i ? 'n' : '', text: c })))))));
+}
+function card(group, o) {
+  const body = h('div', { class: 'chart-body' });
+  let table = false;
+  const btn = h('button', { class: 'mini', type: 'button', 'aria-pressed': 'false', text: 'Table', onclick: () => {
+    table = !table; btn.setAttribute('aria-pressed', table); btn.textContent = table ? 'Chart' : 'Table'; hideTip(); draw();
+  } });
+  const el = h('figure', { class: 'card' },
+    h('figcaption', {}, h('div', {}, h('h3', { text: o.title }), o.sub && h('p', { class: 'sub', text: o.sub })), btn),
+    o.series.length > 1 && legend(o.series, o.kind),
+    body);
+  function draw() {
+    body.replaceChildren();
+    if (!o.labels.length || o.series.every(se => se.values.every(v => v == null))) { body.append(h('p', { class: 'empty', text: 'No data available' })); return; }
+    if (table) { body.append(miniTable(o.table())); return; }
+    (o.kind === 'line' ? lineChart : columnChart)(body, o);
+  }
+  regs[group].push(draw);
+  return el;
+}
+
+/* ---------- generic table ---------- */
+function dataTable(cols, rows, opts) {
+  return h('div', { class: 'tbl-wrap' + (opts && opts.scroll ? ' scroll' : '') }, h('table', {},
+    h('thead', {}, h('tr', {}, cols.map(c => h('th', { class: c.n ? 'n' : '', text: c.label })))),
+    h('tbody', {}, rows.map(r => h('tr', { class: r.cls || '' }, r.cells.map((c, i) => {
+      const cell = (c && typeof c === 'object' && !c.nodeType) ? c : { t: c };
+      return h('td', { class: [cols[i].n ? 'n' : '', cell.cls || '', cols[i].wrap ? 'wrap-text' : ''].join(' ').trim() || null }, cell.node || (cell.t == null ? '—' : String(cell.t)));
+    }))))));
+}
+const sectionHead = (title, note) => h('div', { class: 'sec-head' }, h('h2', { text: title }), note && h('p', { class: 'note', text: note }));
+const subHead = (title, note) => h('h3', { class: 'sub-h' }, title, note && h('span', { class: 'note', text: note }));
+
+/* ---------- financial statement definitions ---------- */
+// [code, label, unit, style]  unit: cr | rs | ratio | shares ; style: b (bold) | i (indent) | g (group header)
+const LINES = {
+  income: [
+    ['incTrev', 'Total revenue', 'cr', 'b'], ['incRaw', 'Raw materials', 'cr', 'i'], ['incPfc', 'Power & fuel', 'cr', 'i'],
+    ['incEpc', 'Employee cost', 'cr', 'i'], ['incSga', 'Selling & administrative', 'cr', 'i'], ['incOpe', 'Operating & other expenses', 'cr', 'i'],
+    ['incEbi', 'EBITDA', 'cr', 'b'], ['incDep', 'Depreciation & amortisation', 'cr', 'i'], ['incPbi', 'PBIT', 'cr', 'b'],
+    ['incIoi', 'Interest & other items', 'cr', 'i'], ['incPbt', 'Profit before tax', 'cr', 'b'], ['incToi', 'Taxes & other items', 'cr', 'i'],
+    ['incNinc', 'Net income', 'cr', 'b'], ['incEps', 'EPS (₹)', 'rs', ''], ['incDps', 'Dividend per share (₹)', 'rs', ''],
+    ['incPyr', 'Payout ratio', 'ratio', ''],
+  ],
+  balance: [
+    ['', 'Assets', '', 'g'], ['balCsti', 'Cash & equivalents', 'cr', 'i'], ['balTrec', 'Receivables', 'cr', 'i'], ['balTinv', 'Inventory', 'cr', 'i'],
+    ['balOca', 'Other current assets', 'cr', 'i'], ['balTca', 'Total current assets', 'cr', 'b'], ['balNetl', 'Net loans & advances', 'cr', 'i'],
+    ['balNppe', 'Net property, plant & equipment', 'cr', 'i'], ['balGint', 'Goodwill & intangibles', 'cr', 'i'], ['balLti', 'Long-term investments', 'cr', 'i'],
+    ['balDta', 'Deferred tax assets', 'cr', 'i'], ['balOtha', 'Other assets', 'cr', 'i'], ['balNca', 'Non-current assets', 'cr', 'b'], ['balTota', 'Total assets', 'cr', 'b'],
+    ['', 'Liabilities', '', 'g'], ['balAccp', 'Accounts payable', 'cr', 'i'], ['balTdep', 'Deposits', 'cr', 'i'], ['balOcl', 'Other current liabilities', 'cr', 'i'],
+    ['balTcl', 'Total current liabilities', 'cr', 'b'], ['balTltd', 'Long-term debt', 'cr', 'i'], ['balTdeb', 'Total debt', 'cr', 'i'],
+    ['balDit', 'Deferred tax liabilities', 'cr', 'i'], ['balMint', 'Minority interest', 'cr', 'i'], ['balOthl', 'Other liabilities', 'cr', 'i'],
+    ['balNcl', 'Non-current liabilities', 'cr', 'b'], ['balTotl', 'Total liabilities', 'cr', 'b'],
+    ['', 'Equity', '', 'g'], ['balComs', 'Share capital', 'cr', 'i'], ['balApic', 'Additional paid-in capital', 'cr', 'i'], ['balRtne', 'Reserves & surplus', 'cr', 'i'],
+    ['balOeq', 'Other equity', 'cr', 'i'], ['balTeq', 'Total equity', 'cr', 'b'], ['balTlse', 'Total liabilities & equity', 'cr', 'b'],
+    ['balTcso', 'Shares outstanding (crore)', 'shares', ''],
+  ],
+  cashflow: [
+    ['cafCfoa', 'Operating cash flow', 'cr', 'b'], ['cafCiwc', 'Change in working capital', 'cr', 'i'], ['cafCfia', 'Investing cash flow', 'cr', 'b'],
+    ['cafCexp', 'Capital expenditure', 'cr', 'i'], ['cafCffa', 'Financing cash flow', 'cr', 'b'], ['cafTcdp', 'Dividends paid', 'cr', 'i'],
+    ['cafNcic', 'Net change in cash', 'cr', 'b'], ['cafFcf', 'Free cash flow', 'cr', 'b'],
+  ],
+};
+const STMT_NAME = { income: 'Income statement', balance: 'Balance sheet', cashflow: 'Cash flow' };
+
+const fin = { stmt: 'income', period: 'annual', view: 'normal' };
+(() => { // optional deep link, e.g. report.html#fin=balance/annual/growth
+  const m = /fin=(income|balance|cashflow)\/(annual|interim)\/(normal|growth|margin)/.exec(location.hash);
+  if (m) { fin.stmt = m[1]; fin.period = m[2]; fin.view = m[3]; }
+})();
+function rowsFor(stmt, period, view) {
+  if (stmt === 'income') return ((D.income[period === 'annual' ? 'annual' : 'interim'] || {})[view]) || [];
+  return ((stmt === 'balance' ? D.balance : D.cashflow)[view]) || [];
+}
+const isAnnual = () => fin.stmt !== 'income' || fin.period === 'annual';
+const codeOf = c => (fin.stmt === 'income' && fin.period !== 'annual') ? 'q' + c[0].toUpperCase() + c.slice(1) : c;
+function tidyPeriod(p) {
+  const last = String(p || '').split(' - ').pop().trim();           // "JUN '26 - SEP '26" -> "SEP '26"
+  let m = /^([A-Z]{3}) '?(\d{2})(\d{2})?$/.exec(last);              // SEP '26 / JUN 2020
+  if (m) return m[1][0] + m[1].slice(1).toLowerCase() + ' ' + (m[3] || m[2]);
+  m = /^FY '?(\d{2})(\d{2})?$/.exec(last);                          // FY '26 / FY 2026
+  if (m) return 'FY' + (m[2] || m[1]);
+  return last || '—';
+}
+function colLabel(r) {
+  if (r.displayPeriod === 'TTM') return 'TTM';
+  const d = r.endDate ? new Date(r.endDate) : null;
+  if (!d || isNaN(d)) return tidyPeriod(r.displayPeriod);
+  return isAnnual() ? 'FY' + String(d.getUTCFullYear()).slice(2)
+    : `${MONTHS[d.getUTCMonth()]} ${String(d.getUTCFullYear()).slice(2)}`;
+}
+function fmtCell(unit, v, view, code) {
+  if (v == null) return '—';
+  if (view === 'growth') return spct(v);
+  if (view === 'margin') return /Eps$/.test(code) ? num(v, 2) : pct(v);
+  if (unit === 'rs') return num(v, 2);
+  if (unit === 'ratio') return pct(v * 100);
+  if (unit === 'shares') return num(v, 2);
+  return num(v, 0);
+}
+function finTable(rows) {
+  const cols = [{ label: '₹ crore' }].concat(rows.map(r => ({ label: colLabel(r), n: true })));
+  const body = [];
+  LINES[fin.stmt].forEach(([code, label, unit, st]) => {
+    if (st === 'g') { body.push({ cls: 'grp', cells: [label].concat(rows.map(() => '')) }); return; }
+    const c = codeOf(code), vals = rows.map(r => r[c]);
+    if (!vals.some(v => v != null && v !== 0)) return;
+    body.push({ cls: st, cells: [label].concat(vals.map((v, i) => ({ t: fmtCell(unit, v, fin.view, c), cls: rows[i].displayPeriod === 'TTM' ? 'ttm' : '' }))) });
+  });
+  // drop group headers that ended up with nothing under them
+  const kept = body.filter((r, i) => r.cls !== 'grp' || (body[i + 1] && body[i + 1].cls !== 'grp'));
+  return dataTable(cols, kept);
+}
+
+function renderFinancials() {
+  regs.fin = [];
+  const sec = document.getElementById('financials');
+  const normal = rowsFor(fin.stmt, fin.period, 'normal').filter(r => r.displayPeriod !== 'TTM');
+  const labels = normal.map(colLabel), col = c => normal.map(r => r[codeOf(c)]);
+  const per = isAnnual() ? 'yearly' : 'quarterly';
+  const aria = t => `${t}, ${per}, ${labels[0] || ''} to ${labels[labels.length - 1] || ''}`;
+  const money = { axisFmt: compact, valFmt: v => num(v, 0), tipFmt: cr };
+  const sub = '₹ crore; K = thousand, L = lakh (1,00,000)';
+  const cards = [];
+  if (fin.stmt === 'income') {
+    const ratio = (a, b) => normal.map(r => (r[codeOf(a)] != null && r[codeOf(b)] > 0) ? r[codeOf(a)] / r[codeOf(b)] * 100 : null);
+    cards.push(
+      mkCard({ title: 'Revenue', sub, series: [{ name: 'Total revenue', color: SC(1), values: col('incTrev') }], ...money }),
+      mkCard({ title: 'Net income', sub, series: [{ name: 'Net income', color: SC(1), values: col('incNinc') }], ...money }),
+      mkCard({ title: 'Margins', sub: '% of revenue', kind: 'line',
+        series: [{ name: 'Net margin', color: SC(1), values: ratio('incNinc', 'incTrev') }, { name: 'EBITDA margin', color: SC(2), values: ratio('incEbi', 'incTrev') }],
+        axisFmt: v => num(v, 0) + '%', valFmt: v => pct(v), tipFmt: v => pct(v) }));
+  } else if (fin.stmt === 'balance') {
+    cards.push(
+      mkCard({ title: 'Total assets', sub, series: [{ name: 'Total assets', color: SC(1), values: col('balTota') }], ...money }),
+      mkCard({ title: 'Equity vs liabilities', sub, stacked: true,
+        series: [{ name: 'Total equity', color: SC(1), values: col('balTeq') }, { name: 'Total liabilities', color: SC(2), values: col('balTotl') }], ...money }));
+  } else {
+    cards.push(
+      mkCard({ title: 'Cash flow by activity', sub,
+        series: [{ name: 'Operating', color: SC(1), values: col('cafCfoa') }, { name: 'Investing', color: SC(2), values: col('cafCfia') }, { name: 'Financing', color: SC(3), values: col('cafCffa') }], ...money }),
+      mkCard({ title: 'Free cash flow', sub, series: [{ name: 'Free cash flow', color: SC(1), values: col('cafFcf') }], ...money }));
+  }
+  function mkCard(o) {
+    return card('fin', { labels, kind: 'bar', aria: aria(o.title), ...o,
+      table: () => ({ head: ['Period'].concat(o.series.map(se => se.name)), rows: labels.map((l, i) => [l].concat(o.series.map(se => se.values[i] == null ? '—' : (o.kind === 'line' ? pct(se.values[i]) : num(se.values[i], 0))))) }) });
+  }
+
+  const rows = rowsFor(fin.stmt, fin.period, fin.view);
+  const basis = (normal[normal.length - 1] || {}).reporting;
+  const btn = (grp, val, text, disabled) => h('button', { type: 'button', 'aria-pressed': String(fin[grp] === val), disabled: disabled || null, text,
+    onclick: () => { fin[grp] = val; if (fin.stmt !== 'income') { fin.period = 'annual'; if (fin.view === 'margin') fin.view = 'normal'; } hideTip(); renderFinancials(); } });
+  const growthName = isAnnual() ? 'YoY growth' : 'QoQ growth';
+  fill(sec, 
+    sectionHead('Financials', `${basis ? 'Reporting basis: ' + basis + '. ' : ''}₹ crore unless noted; signs as reported; TTM = trailing twelve months.`),
+    h('div', { class: 'controls' },
+      h('div', { class: 'seg', role: 'group', 'aria-label': 'Statement' }, Object.keys(STMT_NAME).map(k => btn('stmt', k, STMT_NAME[k]))),
+      h('div', { class: 'seg', role: 'group', 'aria-label': 'Period' }, btn('period', 'annual', 'Annual'), btn('period', 'interim', 'Quarterly', fin.stmt !== 'income')),
+      h('div', { class: 'seg', role: 'group', 'aria-label': 'View' }, btn('view', 'normal', 'Reported'), btn('view', 'growth', growthName), btn('view', 'margin', 'Margin (% of revenue)', fin.stmt !== 'income'))),
+    h('div', { class: 'grid' }, cards),
+    h('div', { style: 'margin-top:12px' }, rows.length ? finTable(rows) : h('p', { class: 'empty', text: 'No data available for this view' })));
+  drawGroup('fin');
+  const wrap = sec.querySelector('.tbl-wrap'); if (wrap) wrap.scrollLeft = wrap.scrollWidth;
+}
+
+/* ---------- overview ---------- */
+function tile(label, value, unit, delta, note) {
+  return h('div', { class: 'tile' },
+    h('div', { class: 'l', text: label }),
+    h('div', { class: 'v' }, value, unit && h('small', { text: unit })),
+    (delta || note) && h('div', { class: 'd' }, delta ? h('span', { class: 'dg' }, h('span', { class: 'ico ' + delta.dir, 'aria-hidden': 'true', text: delta.dir === 'up' ? '▲' : delta.dir === 'down' ? '▼' : delta.dir === 'warn' ? '◆' : '▬' }), ' ', delta.text) : null, note && h('span', { text: note })));
+}
+function change(cur, prev, label) {
+  if (cur == null || prev == null || prev <= 0) return null;
+  const p = (cur / prev - 1) * 100;
+  return { dir: p > 0.05 ? 'up' : p < -0.05 ? 'down' : 'flat', text: `${spct(p)} vs ${label}` };
+}
+function renderOverview() {
+  const i = D.info, sec = document.getElementById('overview');
+  document.getElementById('brand').textContent = i.name || i.sid;
+  const chip = (k, v) => v ? h('span', { class: 'chip' }, k ? k + ' ' : '', h('b', { text: v })) : null;
+  const gic = i.gic ? [i.gic.sector, i.gic.industry, i.gic.subindustry].filter((x, j, a) => x && a.indexOf(x) === j).join(' › ') : null;
+  const ann = rowsFor('income', 'annual', 'normal').filter(r => r.displayPeriod !== 'TTM');
+  const cf = rowsFor('cashflow', 'annual', 'normal');
+  const cur = ann[ann.length - 1] || {}, prev = ann[ann.length - 2] || {};
+  const fy = ann.length ? colLabelFor(cur) : '';
+  const cfCur = cf[cf.length - 1] || {}, cfPrev = cf[cf.length - 2] || {};
+  const margin = r => (r.incNinc != null && r.incTrev > 0) ? r.incNinc / r.incTrev * 100 : null;
+  const mc = margin(cur), mp = margin(prev);
+  const tiles = [];
+  if (ann.length) {
+    tiles.push(
+      tile(`Revenue · ${fy}`, num(cur.incTrev, 0), '₹ cr', change(cur.incTrev, prev.incTrev, colLabelFor(prev))),
+      tile(`Net income · ${fy}`, num(cur.incNinc, 0), '₹ cr', change(cur.incNinc, prev.incNinc, colLabelFor(prev))),
+      tile(`EPS · ${fy}`, num(cur.incEps, 2), '₹', change(cur.incEps, prev.incEps, colLabelFor(prev))),
+      tile(`Net margin · ${fy}`, pct(mc), null, mc != null && mp != null ? { dir: mc - mp > .05 ? 'up' : mc - mp < -.05 ? 'down' : 'flat', text: `${mc - mp >= 0 ? '+' : MINUS}${num(Math.abs(mc - mp), 1)} pp vs ${colLabelFor(prev)}` } : null),
+      tile(`Operating cash flow · ${fy}`, num(cfCur.cafCfoa, 0), '₹ cr', change(cfCur.cafCfoa, cfPrev.cafCfoa, colLabelFor(prev))),
+      tile(`Dividend per share · ${fy}`, cur.incDps == null ? '—' : num(cur.incDps, 2), cur.incDps == null ? null : '₹', change(cur.incDps, prev.incDps, colLabelFor(prev))));
+  }
+  fill(sec, 
+    h('h1', { text: i.name || i.sid }),
+    h('div', { class: 'chips' },
+      chip('', [i.ticker, i.exchange].filter(Boolean).join(' · ')), chip('ISIN', i.isin), chip('', i.sector), chip('GICS', gic),
+      chip('', i.marketCapLabel), (i.tags || []).filter(t => t !== i.sector).map(t => chip('', t))),
+    i.description && h('p', { class: 'about', text: i.description }),
+    tiles.length > 0 && h('div', { class: 'tiles' }, tiles));
+}
+function colLabelFor(r) { const d = r.endDate ? new Date(r.endDate) : null; return d && !isNaN(d) ? 'FY' + String(d.getUTCFullYear()).slice(2) : (r.displayPeriod || ''); }
+
+/* ---------- takeaways ---------- */
+const TONE = { positive: ['✓', 'Strength'], caution: ['!', 'Watch'], neutral: ['•', 'Note'] };
+function insightCard(i) {
+  const [glyph, word] = TONE[i.tone] || TONE.neutral;
+  return h('article', { class: 'insight ' + i.tone },
+    h('div', { class: 'meta' }, h('span', { class: 'tone' }, h('i', { 'aria-hidden': 'true', text: glyph }), word), h('span', { text: '· ' + i.category })),
+    h('h3', { text: i.title }),
+    i.detail && h('p', { text: i.detail }),
+    (i.evidence.length || i.rule) && h('details', {}, h('summary', { text: 'How this is computed' }),
+      i.evidence.length > 0 && h('ul', {}, i.evidence.map(e => h('li', { text: e }))),
+      i.rule && h('p', { class: 'rule', text: 'Rule: ' + i.rule })));
+}
+function renderTakeaways() {
+  const list = D.insights || [], story = D.story, sec = document.getElementById('takeaways');
+  if (!list.length && !story) { fill(sec); return; }
+  const n = k => list.filter(i => i.tone === k).length;
+  const numbers = list.length > 0 && h('details', { class: 'numbers', open: story ? null : true },
+    h('summary', {}, 'The numbers behind the story',
+      h('span', { class: 'tk-summary' }, h('span', {}, h('b', { text: n('positive') }), ' strengths'), h('span', {}, h('b', { text: n('caution') }), ' to watch'), h('span', {}, h('b', { text: n('neutral') }), ' notes'))),
+    h('div', { class: 'insights' }, list.map(insightCard)),
+    h('p', { class: 'note tk-note', text: 'Each observation comes from a fixed rule, with its thresholds shown under "How this is computed".' }));
+  fill(sec,
+    h('div', { class: 'sec-head' }, h('h2', { text: 'In plain words' }),
+      h('p', { class: 'note', text: 'Written automatically from the numbers on this page by fixed rules, not by a person or an AI. It describes what the data shows and is not investment advice.' })),
+    story && h('div', { class: 'story' },
+      story.headline && h('p', { class: 'lead', text: story.headline }),
+      (story.chapters || []).map(ch => h('section', { class: 'chapter' }, h('h3', { text: ch.title }), h('p', { text: ch.text })))),
+    numbers);
+}
+
+/* ---------- ownership ---------- */
+const HOLD = [
+  ['Promoter', 'pmPctT', ''], ['Pledged (of total shares)', 'plPctT', 'i'], ['Foreign institutions (FII)', 'fiPctT', 'b'],
+  ['Domestic institutions (DII)', 'diPctT', 'b'], ['Mutual funds', 'mfPctT', 'i'], ['Insurance', 'isPctT', 'i'], ['Other DII', 'othExInsDiPctT', 'i'],
+  ['Retail & others', 'rOthPctT', 'b'], ['Retail', 'rhPctT', 'i'], ['Other', 'othPctT', 'i'],
+];
+function renderOwnership() {
+  regs.own = [];
+  const sec = document.getElementById('ownership');
+  const hs = (D.holdings || []).slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+  if (!hs.length) { fill(sec, sectionHead('Ownership'), h('p', { class: 'empty', text: 'No shareholding data available' })); return; }
+  const last = hs[hs.length - 1].data, prev = (hs[hs.length - 2] || {}).data || {};
+  const pp = (k, f) => { const a = f(last), b = f(prev); return a != null && b != null ? { dir: a - b > .005 ? 'up' : a - b < -.005 ? 'down' : 'flat', text: `${a - b >= 0 ? '+' : MINUS}${num(Math.abs(a - b), 2)} pp QoQ` } : null; };
+  const oth = d => d.diPctT != null && d.mfPctT != null ? d.diPctT - d.mfPctT : null;
+  const noProm = !(last.pmPctT > 0);
+  const tiles = [
+    tile('Promoter', pct(last.pmPctT || 0, 2), null, noProm ? null : pp('pm', d => d.pmPctT), noProm ? 'No identified promoter' : null),
+    tile('Promoter pledged', noProm ? '—' : pct(last.plPctT || 0, 2), null, noProm ? null : (last.plPctT > 0 ? { dir: 'warn', text: 'Shares pledged' } : { dir: 'up', text: 'None pledged' }), noProm ? 'No promoter holding' : null),
+    tile('Foreign institutions', pct(last.fiPctT, 2), null, pp('fi', d => d.fiPctT)),
+    tile('Mutual funds', pct(last.mfPctT, 2), null, pp('mf', d => d.mfPctT)),
+    tile('Other DII', pct(oth(last), 2), null, pp('di', oth), 'incl. insurance'),
+    tile('Retail & others', pct(last.rOthPctT, 2), null, pp('r', d => d.rOthPctT)),
+    D.info.nShareholders ? tile('Shareholders', compactN(D.info.nShareholders), null, null) : null,
+  ];
+  const series = [
+    { name: 'Promoter', color: SC(1), cssVar: '--s1', pick: d => d.pmPctT }, { name: 'Foreign institutions', color: SC(2), cssVar: '--s2', pick: d => d.fiPctT },
+    { name: 'Mutual funds', color: SC(3), cssVar: '--s3', pick: d => d.mfPctT }, { name: 'Other DII', color: SC(4), cssVar: '--s4', pick: oth },
+    { name: 'Retail & others', color: SC(5), cssVar: '--s5', pick: d => d.rOthPctT },
+  ];
+  const rowsDesc = hs.slice().reverse().map(x => ({ label: fmtMonth(x.date), values: series.map(se => se.pick(x.data)) }));
+  const stackCard = (() => {
+    const body = h('div', { class: 'chart-body' }); let table = false;
+    const btn = h('button', { class: 'mini', type: 'button', 'aria-pressed': 'false', text: 'Table', onclick: () => { table = !table; btn.setAttribute('aria-pressed', table); btn.textContent = table ? 'Chart' : 'Table'; hideTip(); draw(); } });
+    const el = h('figure', { class: 'card' },
+      h('figcaption', {}, h('div', {}, h('h3', { text: 'Who owns the company' }), h('p', { class: 'sub', text: '% of shares outstanding, by quarter-end (newest first)' })), btn), legend(series), body);
+    function draw() {
+      body.replaceChildren();
+      if (table) body.append(miniTable({ head: ['Quarter'].concat(series.map(se => se.name)), rows: rowsDesc.map(r => [r.label].concat(r.values.map(v => pct(v, 2)))) }));
+      else stackRows(body, { rows: rowsDesc, series, aria: `Shareholding split over ${hs.length} quarters` });
+    }
+    regs.own.push(draw); return el;
+  })();
+
+  const cols = [{ label: '% of shares' }].concat(hs.map(x => ({ label: fmtMonth(x.date), n: true })), [{ label: 'Change, last qtr', n: true }]);
+  const body = HOLD.map(([label, k, st]) => {
+    const vals = hs.map(x => x.data[k]); if (!vals.some(v => v != null && v !== 0)) return null;
+    const a = vals[vals.length - 1], b = vals[vals.length - 2];
+    return { cls: st, cells: [label].concat(vals.map(v => v == null ? '—' : num(v, 2)), [a != null && b != null ? `${a - b >= 0 ? '+' : MINUS}${num(Math.abs(a - b), 2)} pp` : '—']) };
+  }).filter(Boolean);
+
+  const mf = D.mfHoldings || [], sc = D.smallcases || [];
+  fill(sec, 
+    sectionHead('Ownership', `Latest filing: ${fmtMonth(hs[hs.length - 1].date)}. Changes are vs the prior quarter (QoQ). Tickertape exposes the last ${hs.length} quarter-ends.`),
+    h('div', { class: 'tiles', style: 'margin:0 0 12px' }, tiles),
+    stackCard,
+    subHead('Shareholding pattern'), dataTable(cols, body),
+    mf.length ? [subHead('Top mutual fund holders', `${mf.length} largest by holding`), dataTable(
+      [{ label: 'Rank', n: true }, { label: 'Scheme' }, { label: '% of company held', n: true }, { label: '3-month change', n: true }, { label: '% of fund portfolio', n: true }],
+      mf.map(m => ({ cells: [m.rank == null ? '—' : (m.prevRank != null && m.prevRank !== m.rank ? `${m.rank} (was ${m.prevRank})` : String(m.rank)), m.name, pct(m.pctOfCompany, 2), m.change3m == null ? '—' : `${m.change3m >= 0 ? '+' : MINUS}${num(Math.abs(m.change3m), 2)} pp`, pct(m.pctOfFund, 2)] })))] : null,
+    sc.length ? [subHead('Held by smallcases'), dataTable([{ label: 'Smallcase' }, { label: 'Publisher' }, { label: 'Theme', wrap: true }], sc.map(x => ({ cells: [x.name, x.publisher, x.description] })))] : null);
+  drawGroup('own');
+}
+function compactN(v) { return v >= 1e7 ? num(v / 1e7, 2) + ' cr' : v >= 1e5 ? num(v / 1e5, 2) + ' lakh' : num(v, 0); }
+
+/* ---------- dividends + corporate actions ---------- */
+function renderDividends() {
+  regs.div = [];
+  const sec = document.getElementById('dividends');
+  const dv = (D.dividends || []).slice().sort((a, b) => new Date(b.exDate) - new Date(a.exDate));
+  const acts = (D.actions || []).slice().sort((a, b) => new Date(b.exDate) - new Date(a.exDate));
+  const byYear = {};
+  dv.forEach(d => { const y = new Date(d.exDate).getUTCFullYear(); if (d.adjusted != null) byYear[y] = (byYear[y] || 0) + d.adjusted; });
+  const years = Object.keys(byYear).map(Number).sort((a, b) => a - b);
+  const full = []; for (let y = years[0]; y <= years[years.length - 1]; y++) full.push(y);
+  const chart = full.length ? card('div', {
+    title: 'Dividend per share by year', sub: '₹ per share, summed by ex-date year; adjusted for bonus and splits', kind: 'bar',
+    labels: full.map(String), series: [{ name: 'Dividend per share', color: SC(1), values: full.map(y => byYear[y] || 0) }],
+    axisFmt: v => num(v, v % 1 ? 1 : 0), valFmt: v => '₹' + num(v, 2), tipFmt: v => '₹' + num(v, 2) + ' / share', aria: `Dividend per share by year, ${full[0]} to ${full[full.length - 1]}`,
+    table: () => ({ head: ['Year', '₹ per share'], rows: full.map(y => [String(y), num(byYear[y] || 0, 2)]) }),
+  }) : null;
+  const up = D.upcomingDividends || [];
+  fill(sec, 
+    sectionHead('Dividends & corporate actions', `${dv.length} cash dividend${dv.length === 1 ? '' : 's'} and ${acts.length} corporate action${acts.length === 1 ? '' : 's'} on record`),
+    up.length ? h('p', { class: 'note', style: 'margin-bottom:10px', text: 'Upcoming: ' + up.map(u => `${fmtDate(u.exDate)} (${u.kind || 'dividend'}, ₹${u.declared})`).join('; ') }) : null,
+    h('div', { class: 'cols2', style: 'margin-top:0' }, chart,
+      dv.length ? dataTable([{ label: 'Ex-date' }, { label: 'Type' }, { label: 'Declared ₹', n: true }, { label: 'Adjusted ₹', n: true }],
+        dv.map(d => ({ cells: [fmtDate(d.exDate), d.kind, d.declared == null ? '—' : num(parseFloat(d.declared), 2), d.adjusted == null ? '—' : num(d.adjusted, 2)] })), { scroll: true }) : h('p', { class: 'empty', text: 'No cash dividends on record' })),
+    subHead('Corporate actions', 'bonus, splits, buybacks, rights and similar'),
+    acts.length ? dataTable([{ label: 'Ex-date' }, { label: 'Action' }, { label: 'Detail', wrap: true }, { label: 'Ratio', n: true }, { label: 'Price adj. factor', n: true }],
+      acts.map(a => ({ cells: [fmtDate(a.exDate), a.type, a.detail, a.ratio, a.adjustmentFactor == null ? '—' : num(a.adjustmentFactor, 4)] }))) : h('p', { class: 'empty', text: 'No corporate actions on record' }));
+  drawGroup('div');
+}
+
+/* ---------- filings ---------- */
+function renderFilings() {
+  const sec = document.getElementById('filings');
+  const reports = (D.annualReports || []).slice().sort((a, b) => b.year - a.year);
+  const count = {}; reports.forEach(r => { count[r.year] = (count[r.year] || 0) + 1; });
+  const seen = {};
+  const chips = reports.map(r => { seen[r.year] = (seen[r.year] || 0) + 1; return link(r.link, count[r.year] > 1 ? `${r.year} (${seen[r.year]})` : String(r.year)); })
+    .filter(Boolean).map(a => { a.className = 'linkchip'; return a; });
+  const pres = (D.presentations || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+  const ann = (D.announcements || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+  const subjects = Array.from(new Set(ann.map(a => a.subject).filter(Boolean))).sort();
+  const legal = (D.legal || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const annHost = h('div'), q = { text: '', subject: '', all: false };
+  function drawAnn() {
+    const t = q.text.toLowerCase();
+    const list = ann.filter(a => (!q.subject || a.subject === q.subject) && (!t || ((a.detail || '') + ' ' + (a.subject || '')).toLowerCase().includes(t)));
+    const shown = q.all ? list : list.slice(0, 15);
+    fill(annHost,
+      list.length ? dataTable([{ label: 'Date' }, { label: 'Subject' }, { label: 'Detail', wrap: true }, { label: 'Document' }],
+        shown.map(a => ({ cells: [fmtDate(a.date), a.subject, a.detail, link(a.link, 'Open') ? { node: link(a.link, 'Open') } : '—'] })), { scroll: q.all }) : h('p', { class: 'empty', text: 'No announcements match' }),
+      list.length > shown.length ? h('button', { class: 'mini more', type: 'button', text: `Show all ${list.length}`, onclick: () => { q.all = true; drawAnn(); } }) : null);
+  }
+  fill(sec, 
+    sectionHead('Filings'),
+    subHead('Annual reports', `${reports.length} on record`),
+    chips.length ? h('div', { class: 'chips-row' }, chips) : h('p', { class: 'empty', text: 'No annual reports listed' }),
+    subHead('Investor presentations', pres.length ? `${pres.length} on record; Tickertape serves the PDFs through short-lived links, so only the listing is kept here` : null),
+    pres.length ? dataTable([{ label: 'Date' }, { label: 'Detail', wrap: true }], pres.map(p => ({ cells: [fmtDate(p.date), p.detail] }))) : h('p', { class: 'empty', text: 'No investor presentations listed' }),
+    subHead('Recent exchange announcements', `${ann.length} in the most recent window`),
+    ann.length ? h('div', { class: 'filters' },
+      h('input', { type: 'search', placeholder: 'Search announcements', 'aria-label': 'Search announcements', oninput: e => { q.text = e.target.value; drawAnn(); } }),
+      h('select', { 'aria-label': 'Filter by subject', onchange: e => { q.subject = e.target.value; drawAnn(); } },
+        h('option', { value: '', text: 'All subjects' }), subjects.map(sj => h('option', { value: sj, text: sj })))) : null,
+    ann.length ? annHost : h('p', { class: 'empty', text: 'No announcements available' }),
+    legal.length ? [subHead('Legal orders', `${legal.length} on record`), dataTable([{ label: 'Order date' }, { label: 'Case no.' }, { label: 'Detail', wrap: true }, { label: 'Source' }, { label: 'Document' }],
+      legal.map(l => ({ cells: [fmtDate(l.date), l.caseNo, l.detail, l.source, link(l.link, 'Open') ? { node: link(l.link, 'Open') } : '—'] })), { scroll: legal.length > 10 })] : null);
+  if (ann.length) drawAnn();
+}
+
+/* ---------- footer + boot ---------- */
+function renderFooter() {
+  fill(document.getElementById('foot'), 
+    h('p', { text: `Source: Tickertape public endpoints (unofficial, may change or disappear). Generated ${fmtDate(D.generated)}. Slow-changing data only: statements, ownership, dividends and corporate actions, filings. No prices.` }),
+    h('p', { text: 'Figures are as published by Tickertape and have not been independently verified.' }),
+    (D.errors || []).length ? h('p', { class: 'err', text: 'Some sections could not be loaded when this report was built: ' + D.errors.join('; ') }) : null,
+    (D.insightErrors || []).length ? h('p', { class: 'err', text: 'Some observation rules failed: ' + D.insightErrors.join('; ') }) : null);
+}
+
+try {
+  renderOverview(); renderTakeaways(); renderFinancials(); renderOwnership(); renderDividends(); renderFilings(); renderFooter();
+} catch (e) {
+  document.body.prepend(h('pre', { id: 'js-errors', class: 'err', text: 'Render error: ' + (e && e.stack || e) }));
+}
+addEventListener('error', e => document.body.prepend(h('pre', { id: 'js-errors', class: 'err', text: 'Error: ' + e.message })));
+})();
+</script>
+</body>
+</html>
